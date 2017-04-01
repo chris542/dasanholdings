@@ -1,2 +1,13 @@
 // Variables
-@import "variables"
+@import "variables";
+@import "font";
+
+h1, h2, h3 {
+    font-family: $headerFont;
+}
+h4,h5,h6 {
+    font-family: $subheaderFont
+}
+.navbar {
+    margin-bottom: 0;
+}

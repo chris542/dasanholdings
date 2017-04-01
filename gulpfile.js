@@ -7,12 +7,15 @@ var sourcemaps = require('gulp-sourcemaps');
 var notify = require('gulp-notify');
 
 var pathOf = {
+    project:{
+        name:'dasan' 
+    },
     css: {
-        src: '/resources/assets/sass/*.scss',
+        src: 'resources/assets/sass/*.scss',
         dest: 'public/css/'
     },
     js: {
-        src: '/resources/asesets/js/*.js',
+        src: 'resources/asesets/js/*.js',
         dest: 'public/js/'
     }
 }
@@ -26,16 +29,6 @@ gulp.task('scripts', function () {
         .pipe(browserSync.reload({
             stream: true
         }));;
-})
-
-gulp.task('browser-sync', function () {
-    //using browser-sync
-    browserSync.init({
-        server: {
-            baseDir: pathOf.root.dest
-        },
-        browser: ["google chrome"]
-    });
 })
 
 gulp.task('sassy', function () {
@@ -56,8 +49,7 @@ gulp.task('sassy', function () {
         }))
 })
 
-gulp.task('watch', ['browser-sync' 'scripts', 'sassy'], function () {
-    gulp.watch(pathOf.root.src, ['html-validate']);
+gulp.task('watch', ['scripts', 'sassy'], function () {
     gulp.watch(pathOf.js.src, ["scripts"]);
     gulp.watch(pathOf.css.src, ["sassy"]);
 });
