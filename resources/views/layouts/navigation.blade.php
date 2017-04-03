@@ -1,36 +1,64 @@
+<!-- <CART-NAV></CART-NAV> -->
 <nav class="navbar navbar-default cart-nav">
         <div class="container">
-            <ul class="nav navbar-nav">
-                <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart</a></li>
+            <ul class="nav navbar-header">
+                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Register</a></li>
-              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
         </div>
 </nav>
+<!-- <SEARCH-NAV></SEARCH-NAV> -->
 <nav class="navbar navbar-default search-nav">
-        <div class="container">
-            <div class="col-sm-2 navbar-logo">
-                <a href="/">
-                    <img src="img/logo/Logo.png" alt="DasanHoldingsLtdLogo">
-                </a>
-            </div>
-            <div class="col-sm-10 form-group navbar-search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search Product..">
-                        <span class="input-group-btn">
-                        <button class="btn btn-default nav-search-btn" type="button"><i class="glyphicon glyphicon-search"></i></button>
-                  </span>
-                </div>          
-            </div>
-        </div>
-</nav>
-<nav class="nav-tabs">
     <div class="container">
-        <ul class="nav nav-pills">
-          <li role="presentation" class="active"><a href="#">Home</a></li>
-        </ul>
+
+        <div class="col-md-2 navbar-logo">
+            <a href="/">
+                <img class="img-responsive center-block" src="img/logo/Logo.png" alt="DasanHoldingsLtdLogo">
+            </a>
+        </div>
+
+        <div class="col-md-10 form-group navbar-search">
+            <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search Product..">
+                    <span class="input-group-btn">
+                       <button class="btn btn-default nav-search-btn" type="button">
+                          <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                   </span>
+            </div>          
+        </div>
+
     </div>
 </nav>
-
+<!-- <CATEGORY-NAV></CATEGORY-NAV> -->
+<nav class="navbar navbar-default category-nav" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span>Category List</span>
+            </button>
+        </div>
+        
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                @foreach($categories as $category)
+              <li><a href="#">{{ $category->name }}</a></li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+</nav>

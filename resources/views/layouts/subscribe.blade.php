@@ -1,12 +1,14 @@
 <div id="subscribe" class="container">
-    <h1>Services</h1>
+    <h2>Subscribe to Our Newsletter!</h2>
     <div class="row">
-        <div class="col-md-4">
-            <i class=""></i>
-            <h4>Service 01</h4>
-            <p>Ipsum laudantium ab nisi harum tempore id Consequuntur perferendis architecto delectus consequuntur pariatur, id Amet hic omnis nesciunt illo perspiciatis nobis! Consequuntur explicabo quidem voluptatum magnam a illum Dolor nam</p>
-        </div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
+        <form action="">
+            <div class="col-sm-6">
+                <input type="text">
+            </div>
+            <div class="col-sm-6">
+                <input type="email">
+            </div>
+            <button type="submit">Subscribe</button>
+        </form>
     </div>
 </div>

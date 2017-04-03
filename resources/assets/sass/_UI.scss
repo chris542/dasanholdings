@@ -1,0 +1,14 @@
+h1,h2,h3 {
+    font-family : $headerFont;
+}
+h4,h5,h6 {
+    font-family: $subheaderFont;
+}
+p,span,a {
+    font-family: $bodyFont;
+}
+#map {
+    height: 400px;
+    width: 100%;
+    background-color: $lightgray;
+}

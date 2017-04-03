@@ -1,0 +1,93 @@
+.navbar {
+    margin-bottom: 0;
+}
+/* CARTNAV */
+.cart-nav{
+    border: none;
+    border-radius: 0;
+    background-color: $mainColour;
+    .navbar-nav>li>a{
+        color: $white;        
+        &:hover {
+            background-color: $subColour;
+            color: $white;
+        }
+    }
+}
+/* SEARCHNAV */
+.search-nav{
+    padding: 1em 0;
+    border: none;
+    background-color: $white;
+    .container {
+        display:flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        .navbar-logo {
+            img {
+                width: 100%;
+                padding: 2em 0;
+            }
+        }
+        .navbar-search {
+            margin: 0;
+            input {
+                border-radius: 0;
+                border-color: $mainColour;
+            }
+            button {
+                background-color: $mainColour;
+                border-color: $mainColour;
+                color:$white;
+                &:hover {
+                    background-color: $subColour;
+                    border-color: $subColour;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+/* CATEGORYNAV */
+.category-nav{
+    border: none;
+    margin: 0;
+    background-color: $white;
+    .navbar-header{
+        margin: none;
+        button.navbar-toggle{
+            border: none;
+            border-radius: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            &:hover{
+                background-color: $gray;
+                color: $white;
+            }
+            &:focus {
+                background-color: $subColour;
+                color: $white;
+            }
+            }
+        }
+    .navbar-collapse{
+        text-align: center;
+        .navbar-nav {
+            display:flex;
+            justify-content: space-between;
+            float:none;
+            vertical-align:top; 
+            @media (max-width:768px) {
+                display: inline-block;
+                float: none;
+                vertical-align: top;
+            }
+            li {
+                width: 100%;
+            }
+        }
+    }
+}

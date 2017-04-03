@@ -15,7 +15,7 @@ var pathOf = {
         dest: 'public/css/'
     },
     js: {
-        src: 'resources/asesets/js/*.js',
+        src: 'resources/assets/js/*.js',
         dest: 'public/js/'
     }
 }
@@ -26,9 +26,6 @@ gulp.task('scripts', function () {
         .pipe(concat('all.js'))
         .on('error', notify.onError("Error:<%= error.message %>"))
         .pipe(gulp.dest(pathOf.js.dest))
-        .pipe(browserSync.reload({
-            stream: true
-        }));;
 })
 
 gulp.task('sassy', function () {
@@ -44,9 +41,6 @@ gulp.task('sassy', function () {
         .pipe(prefixer())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(pathOf.css.dest))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
 })
 
 gulp.task('watch', ['scripts', 'sassy'], function () {

@@ -27,5 +27,6 @@
   "bugs": {
     "url": "https://github.com/chris542/dasanholdings/issues"
   },
-  "homepage": "https://github.com/chris542/dasanholdings#readme"
+  "homepage": "https://github.com/chris542/dasanholdings#readme",
+  "dependencies": {}
 }

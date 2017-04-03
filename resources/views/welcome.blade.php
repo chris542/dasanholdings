@@ -6,22 +6,8 @@ Dasan Holdings Ltd.
 
 @section('content')
 
-<div id="main_banner" class="jumbotron">
-    <div class="container">
-        <div class="row">
-            This is the main banner section
-        </div>
-    </div>
-</div>
-<div id="topbanner" class="container">
-    <div class="row">
-        This is Top product section
-    </div>
-</div>
-<div id="services" class="container">
-    <div class="row">
-        This is Services section
-    </div>
-</div>
+@include('welcome/bannerCarousel')
+@include('welcome/topProducts')
+@include('welcome/services')
 
 @endsection

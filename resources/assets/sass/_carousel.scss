@@ -1,0 +1,17 @@
+#bannerCarousel {
+    height: 30em;
+    padding: 5em 0;
+}
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+  }
+  .carousel-indicators {
+      .active {
+          background-color: $mainColour;
+      }
+      li {
+        border-color:  $mainColour;
+      }
+  }
