@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->integer('phone');
             $table->integer('mobile');
             $table->string('email')->unique();
-            $table->boolean('isSubscribed');
-            $table->boolean('isAdmin');
+            $table->boolean('isSubscribed')->default(0);
+            $table->boolean('isAdmin')->default(0);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

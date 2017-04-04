@@ -28,6 +28,9 @@
             img {
                 width: 100%;
                 padding: 2em 0;
+                @include breakpoint(sm){
+                    width: 50%;
+                }
             }
         }
         .navbar-search {
@@ -80,7 +83,7 @@
             justify-content: space-between;
             float:none;
             vertical-align:top; 
-            @media (max-width:768px) {
+            @include breakpoint(xs) {
                 display: inline-block;
                 float: none;
                 vertical-align: top;

@@ -7,8 +7,18 @@ h4,h5,h6 {
 p,span,a {
     font-family: $bodyFont;
 }
+//form
+.btn-primary {
+    background-color: $subColour;
+    border-color: $subColour;
+    color: $white;
+    &:hover {
+        @include darkBGC($subColour);
+        @include darkBDC($subColour);
+    }
+}
 #map {
     height: 400px;
     width: 100%;
-    background-color: $lightgray;
 }
+

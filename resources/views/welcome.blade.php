@@ -9,5 +9,7 @@ Dasan Holdings Ltd.
 @include('welcome/bannerCarousel')
 @include('welcome/topProducts')
 @include('welcome/services')
+@include('layouts.subscribe')
+@include('layouts.contact')
 
 @endsection
