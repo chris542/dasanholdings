@@ -21,7 +21,7 @@ Dasan Login
                <div class="form-group">
                    <label class="col-sm-3 control-label" for="password">Password :</label>
                     <div class="col-sm-6">
-                       <input class="form-control" type="text" name="password">
+                       <input class="form-control" type="password" name="password">
                     </div>
                </div>
                 <div class="form-group">

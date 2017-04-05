@@ -17,13 +17,15 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $casts = [
+        'isAdmin' => 'boolean',
+    ];
     /**
      * Always capitalize the first name when we save it to the database
      */
     public function setFirstNameAttribute($value) {
         $this->attributes['first_name'] = ucfirst($value);
     }
-
     /**
      * Always capitalize the last name when we save it to the database
      */

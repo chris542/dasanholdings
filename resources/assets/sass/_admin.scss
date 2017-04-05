@@ -1,0 +1,19 @@
+#cms {
+    margin-left: 0;
+    margin-right: 0;
+    #sidebar-wrapper{
+        background-color: $mainColour;
+        .sidebar-nav li a {
+            color: $lightgray;
+            &:hover {
+                background-color: $subColour;
+            }
+        }
+    }
+    #menu-toggle {
+          position:absolute;
+          right: 1em;
+          top: 1em;
+          padding: 1em;
+    }
+}

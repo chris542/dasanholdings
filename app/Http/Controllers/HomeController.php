@@ -14,8 +14,6 @@ class HomeController extends Controller
        $categories = Category::all();
        $banners = Banner::all();
 
-
-
         return view('welcome', compact('categories','banners')); 
    } 
 }

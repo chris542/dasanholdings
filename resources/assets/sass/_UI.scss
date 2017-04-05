@@ -1,3 +1,12 @@
+body {
+    background-color: $white;
+    display:flex;
+    min-height:100vh;
+    flex-flow: column nowrap;
+}
+.content{
+    flex:1;
+}
 h1,h2,h3 {
     font-family : $headerFont;
 }
@@ -12,11 +21,16 @@ p,span,a {
 .btn-primary {
     background-color: $subColour;
     border-color: $subColour;
+    border-radius: 0;
     color: $white;
     &:hover {
         @include darkBGC($subColour);
         @include darkBDC($subColour);
     }
+}
+.form-control {
+    border: 1px solid $mainColour;
+    border-radius: 0;
 }
 #map {
     height: 400px;

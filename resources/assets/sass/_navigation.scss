@@ -28,8 +28,11 @@
             img {
                 width: 100%;
                 padding: 2em 0;
+                @include breakpoint(xs){
+                     width: 50%;
+                }
                 @include breakpoint(sm){
-                    width: 50%;
+                     width: 50%;
                 }
             }
         }
@@ -56,6 +59,7 @@
 /* CATEGORYNAV */
 .category-nav{
     border: none;
+    height:auto;
     margin: 0;
     background-color: $white;
     .navbar-header{
@@ -78,13 +82,13 @@
         }
     .navbar-collapse{
         text-align: center;
+        border: none;
         .navbar-nav {
             display:flex;
             justify-content: space-between;
             float:none;
-            vertical-align:top; 
             @include breakpoint(xs) {
-                display: inline-block;
+                display:block;
                 float: none;
                 vertical-align: top;
             }
