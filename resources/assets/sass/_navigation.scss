@@ -1,6 +1,22 @@
 .navbar {
     margin-bottom: 0;
 }
+.navbar-default .navbar-toggle{
+    border:none;
+    border-radius:0;
+    &:hover{
+        background-color: $subColour;
+        .icon-bar {
+            background-color: $white; 
+        }
+    }
+    &:focus{
+        background-color: $subColour;
+        .icon-bar {
+            background-color: $white; 
+        }
+    }
+}
 /* CARTNAV */
 .cart-nav{
     border: none;

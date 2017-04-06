@@ -1,8 +1,13 @@
 #services {
     padding: 3em 15px;
     background-color: $lightgray;
+    h2{
+        padding-bottom:1em;
+    }
     .service {
         padding: 2em 1em;
+        transition: all 0.3s ease-in-out;
+        cursor: default;
         &:hover{
             background-color: $subColour;
             color: $white;

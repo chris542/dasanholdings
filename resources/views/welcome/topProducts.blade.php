@@ -1,6 +1,5 @@
 <div id="topProducts" class="container">
 <h2>Top Products</h2>
-    <div class="row">
       <div class="carousel carousel-showmanymoveone slide" id="carousel-tilenav" data-interval="false">
          <div class="carousel-inner">
                 @foreach($topProducts as $product)
@@ -29,5 +28,4 @@
          <a class="left carousel-control" href="#carousel-tilenav" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
          <a class="right carousel-control" href="#carousel-tilenav" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
       </div>
-    </div>
 </div>
