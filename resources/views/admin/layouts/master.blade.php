@@ -7,15 +7,11 @@
         <title>@yield('title')</title>
         <link rel="icon" href="favicon.ico" type="image/png">
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/bootstrap-3.3.7/dist/css/bootstrap.min.css">
+        <!--Fontawesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- SimpleSidebar for CMS -->
         <link rel="stylesheet" href="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/css/simple-sidebar.css">
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <!--Fontawesome-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/app.css">
 
     </head>
@@ -24,12 +20,17 @@
             <div id="wrapper">
                 @include('admin.layouts.navigation')
                 <div href="#menu-toggle" id="menu-toggle" class="btn btn-default btn-primary">Menu</div>
+                <div id="back-home" class="btn btn-default btn-danger"><a href="/">Back</a></div>
                 <div class="container-fluid">
                     @yield('content')
                 </div>
             </div>
         </div>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <!-- jQuery library -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <!--Bootstrap Js-->
+        <script src="css/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
         <script src="js/all.js"></script>
          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAAy7YHw7fKMqyT0ZdBUvPHMwo0Un42rM&callback=initMap"> </script>
         <script>

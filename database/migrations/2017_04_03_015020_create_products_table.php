@@ -18,9 +18,12 @@ class CreateProductsTable extends Migration
             $table->integer('category_id');
             $table->string('name');
             $table->text('description');
+            $table->string('img');
+            $table->integer('price');
             $table->integer('order');
             $table->boolean('isTopProduct')->default(false);
             $table->integer('tpOrder');
+            $table->integer('rating');
             $table->timestamps();
         });
     }

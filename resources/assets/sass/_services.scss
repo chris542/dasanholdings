@@ -1,9 +1,17 @@
 #services {
-    padding: 1em 15px;
+    padding: 3em 15px;
+    background-color: $lightgray;
+    .service {
+        padding: 2em 1em;
+        &:hover{
+            background-color: $subColour;
+            color: $white;
+        }
+    }
     .service_title, h1 {
         text-align: center;
     }
     i {
-        font-size: 3em;
+        font-size: 2em;
     }
 }

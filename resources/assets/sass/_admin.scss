@@ -10,10 +10,20 @@
             }
         }
     }
+    #page-content-wrapper {
+        position:relative;
+    }
     #menu-toggle {
-          position:absolute;
-          right: 1em;
-          top: 1em;
-          padding: 1em;
+        z-index:100;
+    }
+    #back-home {
+        z-index:100;
+        border-radius: 0;
+        position:absolute;
+        right: 15px;
+        a {
+            color: $white;
+            text-decoration:none;
+        }
     }
 }

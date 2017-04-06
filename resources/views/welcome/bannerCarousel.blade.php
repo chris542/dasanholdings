@@ -22,8 +22,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="slide-text slide_style_left">
-                            <h1 data-animation="animated zoomInRight">{{ $banner->title }}</h1>
-                            <p data-animation="animated fadeInLeft">{{ $banner->description }}</p>
+                            <h1>{{ $banner->title }}</h1>
+                            <p>{{ $banner->description }}</p>
                         </div>
                     </div>
                 </div>
@@ -31,13 +31,13 @@
         @endforeach
     </div>
 
-    <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
+    <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
         <span class="fa fa-angle-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </a>
 
     <!-- Right Control -->
-    <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+    <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
         <span class="fa fa-angle-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>

@@ -1,6 +1,6 @@
 <div id="footer" class="footer">
-    <div class="row">
-        <div class="container">
+    <div class="container">
+        <div class="row">
             <ul class="col-md-3">
                 <h4>Contact Info</h4>
                 <li>Support and General Enquiries</li>
@@ -39,6 +39,9 @@
                 @endif
 
             </ul>
+        </div>
+        <div class="copyrights">
+            <span>coprights©reserved. Dasan Holdings Ltd. created by Chris Kang</span>
         </div>
     </div>
 </div>
