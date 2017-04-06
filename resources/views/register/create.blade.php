@@ -47,16 +47,17 @@ Registration
             <div class="form-group">
                 <label for="mobile" class="col-sm-2 control-label">Mobile:</label>
                 <div class="col-sm-4">
-                  <input type="tel" class="form-control" id="mobile" name="mobile" required>
+                  <input type="tel" pattern=".{7,}" title="minimum 7numbers" class="form-control" id="mobile" name="mobile" required>
                 </div>
                 <label for="phone" class="col-sm-2 control-label">Phone:</label>
                 <div class="col-sm-4">
-                  <input type="tel" class="form-control" id="phone" name="phone" required>
+                  <input type="tel" pattern=".{7,}" title="minimum 7 numbers" class="form-control" id="phone" name="phone" required>
                 </div>
             </div>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
                   <label for="isSubscribed">
+                    <input type="hidden" value="0" name="isSubscribed">
                     <input type="checkbox" value="1" name="isSubscribed">
                     Subscribe to Newsletter
                   </label>

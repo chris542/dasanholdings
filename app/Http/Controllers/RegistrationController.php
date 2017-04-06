@@ -35,7 +35,9 @@ class RegistrationController extends Controller
             'mobile' => request('mobile'),
             'phone' => request('phone'),
             'address' => request('address'),
-            'isSubscribed',
+            'isSubscribed' =>request('isSubscribed'),
+            'created_at' => NOW(),
+            'updated_at' =>NOW(),
         ]);
 
         //Signin
