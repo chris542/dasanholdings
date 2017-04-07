@@ -15,7 +15,7 @@
                             </a>
                         </div>
                       <a href="#">
-                        <img src="img/products/demoItem.png" class="img-responsive center-block">
+                        <img src="{{ asset('storage/products') }}/{{ $product->img }}" class="img-responsive center-block">
                         <div class="details">
                             <h4>{{$product->name}}</h4>
                             <p>${{$product->price}}</p>

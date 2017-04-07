@@ -16,7 +16,7 @@ Route::get('/logout','SessionController@destroy');
 Route::GET('/cms','AdminController@index');
 
 //BannerController
-Route::GET('/admbanner','BannerController@admin')->name('banner');
+Route::GET('/admbanner','BannerController@admin');
 Route::GET('/admbanner/create','BannerController@create');
 Route::POST('/admbanner','BannerController@store');
 Route::GET('/admbanner/{banner}/edit','BannerController@edit');

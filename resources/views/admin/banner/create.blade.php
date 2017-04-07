@@ -12,13 +12,13 @@ Banner Add
        <div class="form-group">
            <label class="col-sm-2 control-label" for="title">Title</label>
            <div class="col-sm-10">
-               <input class="form-control" type="text" name="title" required>
+               <input class="form-control" type="text" name="title" placeholder="Maximum 30 letters" required>
            </div>
        </div> 
         <div class="form-group">
             <label class="col-sm-2 control-label" for="description">Description</label>
             <div class="col-sm-10">
-               <textarea class="form-control" name="description" cols="30" rows="10" required></textarea>
+               <textarea class="form-control" name="description" cols="30" rows="10" placeholder="Maximum 50 letters" required></textarea>
             </div>
         </div>
         <div class="form-group">

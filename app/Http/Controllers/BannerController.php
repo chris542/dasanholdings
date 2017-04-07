@@ -8,6 +8,9 @@ use App\Banner;
 
 class BannerController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin');
+    }
     public function admin(){
        //Show all banners
        $banners =  Banner::all();
@@ -22,7 +25,7 @@ class BannerController extends Controller
     public function store(){
         //Validates the form
         $this->validate(request(),[
-            'title'=>'required',
+            'title'=>'required|max:30',
             'description' => 'required|max:50',
             'bgImg' => 'required|mimes:jpeg,png,jpg',
         ]);
@@ -51,7 +54,7 @@ class BannerController extends Controller
     public function update(Banner $banner){
         //Validate
         $this->validate(request(),[
-            'title'=>'required',
+            'title'=>'required|max:30',
             'description' => 'required|max:50',
             'bgImg' => 'mimes:jpeg,png,jpg',
         ]);
