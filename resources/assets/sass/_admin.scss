@@ -15,15 +15,32 @@
     }
     #menu-toggle {
         z-index:100;
+        margin-left: 35px;
     }
     #back-home {
         z-index:100;
         border-radius: 0;
         position:absolute;
-        right: 15px;
+        right: 50px;
         a {
             color: $white;
             text-decoration:none;
         }
     }
+}
+#adminIndex {
+    li {
+        padding:0;
+        a {
+            display:block;
+            text-decoration: none;
+            color: $mainColour;
+            background-color: $white;
+            padding:10px 15px;
+            &:hover {
+                background-color: $mainColour;
+                color:$white;
+            }
+        } 
+    } 
 }

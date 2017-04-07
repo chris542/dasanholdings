@@ -16,12 +16,24 @@ h4,h5,h6 {
 p,span,a {
     font-family: $bodyFont;
 }
-//login-form
 
+//login-form
+.btn-default {
+    border-radius: 0;
+}
+.btn-main{
+    background-color: $mainColour;
+    border-color: $mainColour;
+    color:$white;
+    &:hover {
+        @include darkBGC($mainColour);
+        @include darkBDC($mainColour);
+        color:$white;
+    }
+}
 .btn-primary {
     background-color: $subColour;
     border-color: $subColour;
-    border-radius: 0;
     color: $white;
     &:hover {
         @include darkBGC($subColour);
@@ -31,6 +43,9 @@ p,span,a {
 .form-control {
     border: 1px solid $mainColour;
     border-radius: 0;
+}
+textarea {
+    resize: vertical;
 }
 #map {
     height: 400px;

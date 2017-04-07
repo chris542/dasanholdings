@@ -1,11 +1,11 @@
 <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="false" >
   <!-- Indicators -->
   <ol class="carousel-indicators">
-        @foreach($banners as $banner)
+        @foreach($banners as $key => $banner)
             @if($banner->id == 1)
         <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
             @else
-        <li data-target="#bootstrap-touch-slider" data-slide-to="{{ ( $banner->id - 1 ) }}"></li>
+                <li data-target="#bootstrap-touch-slider" data-slide-to="{{ $key }} "></li>
             @endif
         @endforeach
   </ol>
@@ -18,7 +18,7 @@
             @else
             <div class="item">
             @endif
-                <img src="img/banner/{{ $banner->bgImg }}" alt="{{ $banner->bgImg }}" class="slide-image">
+                <img src="{{  asset('storage/products/')  }}{{ $banner->bgImg }}" alt="{{ $banner->bgImg }}" class="slide-image">
                 <div class="container">
                     <div class="row">
                         <div class="slide-text slide_style_left">

@@ -1,15 +1,15 @@
-//Carousel
 $(document).ready(function() {
+    //Carousel
     $('.carousel').carousel({
       interval: 3000
-    })
-$(".carousel").swipe({
-  swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-    if (direction == 'left') $(this).carousel('next');
-    if (direction == 'right') $(this).carousel('prev');
-  },
-  allowPageScroll:"vertical"
-});
+    });
+    $(".carousel").swipe({
+      swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+        if (direction == 'left') $(this).carousel('next');
+        if (direction == 'right') $(this).carousel('prev');
+      },
+      allowPageScroll:"vertical"
+    });
 
 //Top Products Carousel
   $('.carousel-showmanymoveone .item').each(function(){
@@ -27,7 +27,6 @@ $(".carousel").swipe({
         }
    });
 });
-
 
 //MAP
 function initMap() {
