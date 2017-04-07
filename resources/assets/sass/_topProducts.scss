@@ -5,10 +5,17 @@
     }
     .item {
         .single-item {
+            &:hover {
+               .details {
+                    background-color: $subColour;
+                }
+            }
             .addtocart{
                 position:absolute;
                 right:0;
                 top:0;
+                border-radius: 100%;
+                transition: 0.3s all ease-in-out;
                 &:hover{
                     background-color: $subColour;
                     a {
@@ -28,6 +35,7 @@
             .details {
                 border: 1px solid $white;
                 background-color: $mainColour;
+                transition: 0.3s ease-in-out all;
                 h4{
                     color: $white;
                     padding: 0.5em 1em;
@@ -40,8 +48,8 @@
         }
     }
     .carousel-showmanymoveone .carousel-control {
-   width: 4%;
-   background-image: none;
+       width: 4%;
+       background-image: none;
     }
 
     .carousel-showmanymoveone .carousel-control.left {

@@ -16,6 +16,12 @@ h4,h5,h6 {
 p,span,a {
     font-family: $bodyFont;
 }
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration:none;
+    }
+}
 
 //login-form
 .btn-default {
