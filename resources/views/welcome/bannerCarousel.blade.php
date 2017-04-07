@@ -12,13 +12,13 @@
 
   <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        @foreach($banners as $banner)
-            @if($banner->id == 1)
+        @foreach($banners as $key =>$banner)
+            @if($key == 0)
             <div class="item active">
             @else
             <div class="item">
             @endif
-                <img src="{{  asset('storage/products/')  }}{{ $banner->bgImg }}" alt="{{ $banner->bgImg }}" class="slide-image">
+                <img src="{{  asset('storage/banners/') }}/{{ $banner->bgImg }}" alt="{{ $banner->bgImg }}" class="slide-image">
                 <div class="container">
                     <div class="row">
                         <div class="slide-text slide_style_left">

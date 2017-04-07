@@ -1,12 +1,49 @@
 #adminBanner {
-    table {
-        tr {
-            td{
-                padding: 1em;
-                .btn-default {
-                    width: 100%;
-                }
-            }
+    .carousel-indicators {
+        li {
+            border: 1px solid $mainColour;
+            background: none;
+            width: 10px;
+            height: 10px;
+        }
+    }
+    .active {
+        background-color: $white;
+        &:before {
+            width: 0px;
+            height:0px;
+        }
+    }
+    .btn-default {
+        border-radius: 0;
+    }
+    .btn-main{
+        background-color: $mainColour;
+        border-color: $mainColour;
+        color:$white;
+        &:hover {
+            @include darkBGC($mainColour);
+            @include darkBDC($mainColour);
+            color:$white;
+        }
+    }
+    .btn-primary {
+        background-color: $subColour;
+        border-color: $subColour;
+        color: $white;
+        &:hover {
+            @include darkBGC($subColour);
+            @include darkBDC($subColour);
+        }
+    }
+    .btn-danger {
+        background-color: tomato;
+        border-color: tomato;
+        color:$white;
+        &:hover {
+            @include darkBGC(tomato);
+            @include darkBDC(tomato);
         }
     }
 }
+    

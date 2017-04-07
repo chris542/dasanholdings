@@ -1,17 +1,15 @@
-#bootstrap-touch-slider {
-    .carousel-indicators {
-        li {
-            border: 1px solid $mainColour;
-            background: none;
-            width: 10px;
-            height: 10px;
-        }
-        .active {
-            background-color: $white;
-            &:before {
-                width: 0px;
-                height:0px;
-            }
+.carousel-indicators {
+    li {
+        border: 1px solid $mainColour;
+        background: none;
+        width: 10px;
+        height: 10px;
+    }
+    .active {
+        background-color: $white;
+        &:before {
+            width: 0px;
+            height:0px;
         }
     }
 }
