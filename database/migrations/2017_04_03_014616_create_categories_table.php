@@ -21,6 +21,10 @@ class CreateCategoriesTable extends Migration
         });
     }
 
+    public function setFirstNameAttribute($value) {
+        $this->attributes['name'] = ucfirst($value);
+    }
+
     /**
      * Reverse the migrations.
      *

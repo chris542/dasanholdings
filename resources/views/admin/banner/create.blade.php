@@ -6,7 +6,7 @@ Banner Add
 
 @section('content')
 <div id="addBanner" class="container-fluid">
-    <h1>Admin Banners</h1>
+    <h1>Adding Banners</h1>
     <form method="post" enctype="multipart/form-data" action="/admbanner" class="form-horizontal">
         {{ csrf_field() }}
        <div class="form-group">

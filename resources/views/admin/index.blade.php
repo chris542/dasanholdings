@@ -18,7 +18,7 @@ Admin Dasan Holdings Ltd.
                 <li class='list-group-item'><a href="/admusers">Users</a></li>
                 <li class='list-group-item'><a href="/admcm">Comments</a></li>
                 <li class='list-group-item'><a href="/admsub">Subscription</a></li>
-                <li class='list-group-item'><a href="/">Back</a></li>
+                <li class='list-group-item'><a href="/">Exit</a></li>
             </ul>
         </div>
     </div>

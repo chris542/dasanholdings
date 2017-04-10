@@ -13,4 +13,8 @@ class Product extends Model
     protected $casts =[
         'isTopProduct' => 'boolean',
     ];
+
+    public function category(){
+       return $this->belongsTo('App\Category');
+    }
 }

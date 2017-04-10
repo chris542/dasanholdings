@@ -19,15 +19,19 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('img');
-            $table->integer('price');
-            $table->integer('order');
+            $table->float('price', 8, 2);
+            $table->integer('order')->default(0);
             $table->boolean('isTopProduct')->default(false);
-            $table->integer('tpOrder');
-            $table->integer('rating');
+            $table->integer('tpOrder')->default(0);
+            $table->integer('rating')->default(5);
             $table->timestamps();
         });
     }
 
+    public function setFirstNameAttribute($value) {
+        $this->attributes['name'] = ucfirst($value);
+    }
+    
     /**
      * Reverse the migrations.
      *

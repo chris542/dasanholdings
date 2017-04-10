@@ -80,7 +80,7 @@ class BannerController extends Controller
         return redirect('/admbanner');
     }
 
-    public function destroy(Banner $banner){
+   public function destroy(Banner $banner){
         $banner->delete();
        return redirect('/admbanner');
     }
