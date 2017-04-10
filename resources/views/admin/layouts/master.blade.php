@@ -23,7 +23,7 @@
             <div id="wrapper">
                 @include('admin.layouts.navigation')
                 <a href="#menu-toggle" id="menu-toggle" class="btn btn-default btn-primary">Menu</a>
-                <a id="back-home" class="btn btn-default btn-danger" href="/">Back</a>
+                <a id="back-home" class="btn btn-default btn-danger" href="/">Exit</a>
                 <div id="page-content-wrapper">
                     @yield('content')
                 </div>
