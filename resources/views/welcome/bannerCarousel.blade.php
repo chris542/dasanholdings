@@ -2,7 +2,7 @@
   <!-- Indicators -->
   <ol class="carousel-indicators">
         @foreach($banners as $key => $banner)
-            @if($banner->id == 1)
+            @if($key == 0)
         <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
             @else
                 <li data-target="#bootstrap-touch-slider" data-slide-to="{{ $key }} "></li>

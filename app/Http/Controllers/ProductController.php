@@ -62,6 +62,7 @@ class ProductController extends Controller
            'description' => 'required',
            'price'=> 'required|min:1',
            'img' => 'mimes:jpeg,png,jpg',
+           'order' => 'required'
        ]);
        //Upload the file
         if(request()->img){
@@ -80,7 +81,7 @@ class ProductController extends Controller
             'description' => request('description'),
             'price'=>request('price'),
             'img'=> "$filename",
-            'order'=> $product->order,
+            'order'=> request('order'),
             'isTopProduct' => request('isTopProduct'),
         ]);
        //Go back to Admin Product Page 

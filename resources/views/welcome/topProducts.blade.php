@@ -2,8 +2,8 @@
 <h2>Top Products</h2>
       <div class="carousel carousel-showmanymoveone slide" id="carousel-tilenav" data-interval="false">
          <div class="carousel-inner">
-                @foreach($topProducts as $product)
-                @if($product->tpOrder == 1)
+                @foreach($topProducts as $key => $product)
+                @if($key == 0)
                 <div class="item active">
                 @else
                 <div class="item">

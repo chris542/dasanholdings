@@ -54,6 +54,12 @@ Edit Product
             </div>
         </div>
         <div class="form-group">
+            <label class="col-sm-2 control-label" for="order">Order : </label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="order" placeholder="{{ $product->order }}" value="{{ $product->order }}">
+            </div>
+        </div>
+        <div class="form-group">
             <label class="col-sm-2 control-label" for="img">Image : </label>
             <div class="col-sm-10">
                 <img class="img-responsive center-block" src="{{ asset('storage/products') }}/{{ $product->img }}" alt="{{ $product->img }}">
