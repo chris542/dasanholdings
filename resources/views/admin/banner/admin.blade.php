@@ -34,7 +34,7 @@ Admin Banner
                                 <h1>{{ $banner->title }}</h1>
                                 <p>{{ $banner->description }}</p>
                                 <a href="/admbanner/{{ $banner->id }}/edit " class="btn btn-default btn-primary">Edit</a>
-                                <a href="/admbanner/{{ $banner->id }}" class="btn btn-default btn-danger">Delete</a>
+                                <a href="/admbanner/{{ $banner->id }}/remove" class="btn btn-default btn-danger">Delete</a>
                             </div>
                         </div>
                     </div>

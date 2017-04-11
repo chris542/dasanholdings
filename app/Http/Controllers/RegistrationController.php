@@ -9,6 +9,13 @@ use App\User;
 
 class RegistrationController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin', ['only'=>'admin', 'destroy']);
+    }
+    public function admin(){
+        $users = User::all();
+       return view('admin.user.admin', compact('users')); 
+    }
     public function create(){
        $categories = Category::all();
         
@@ -43,5 +50,10 @@ class RegistrationController extends Controller
 
         //Go back home
         return redirect()->home();
+    }
+
+    public function destroy(User $user){
+       $user->delete(); 
+       return redirect('/admusers');
     }
 }
