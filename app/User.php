@@ -33,5 +33,9 @@ class User extends Authenticatable
     public function setLastNameAttribute($value) {
         $this->attributes['last_name'] = ucfirst($value);
     }
+
+    public function comment(){
+        return $this->hasMany('App\Comment');
+    }
     
 }

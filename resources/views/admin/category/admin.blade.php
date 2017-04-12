@@ -14,6 +14,7 @@ Category Admin
             <tr>
                 <td>Name</td>
                 <td>Description</td>
+                <td>Order</td>
                 <td>Edit</td>
                 <td>Remove</td>
             </tr>
@@ -23,6 +24,7 @@ Category Admin
             <tr>
                 <td>{{$category->name}}</td>
                 <td>{{$category->description}}</td>
+                <td>{{$category->order}}</td>
                 <td><a class="btn btn-default" href="/admcat/{{ $category->id }}/edit">Edit</a></td>
                 <td><a class="btn btn-default btn-danger" href="/admcat/{{ $category->id }}/remove">Remove</a></td>
             </tr>

@@ -12,13 +12,13 @@ Create Category
         <div class="form-group">
             <label class="col-sm-2 control-label" for="name">Name : </label>
             <div class="col-sm-10">
-                <input class="form-control" type="text" name="name">
+                <input class="form-control" type="text" name="name" required>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label" for="description">Description : </label>
             <div class="col-sm-10">
-                <textarea class="form-control" name="description" cols="30" rows="10"></textarea>
+                <textarea class="form-control" name="description" cols="30" rows="10" required></textarea>
             </div>
         </div>
         <div class="form-group">

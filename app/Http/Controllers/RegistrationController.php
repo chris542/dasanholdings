@@ -12,15 +12,17 @@ class RegistrationController extends Controller
     public function __construct(){
         $this->middleware('admin', ['only'=>'admin', 'destroy']);
     }
+
     public function admin(){
         $users = User::all();
        return view('admin.user.admin', compact('users')); 
     }
+    
     public function create(){
-       $categories = Category::all();
-        
-       return view('register.create', compact('categories')); 
+       $navCat = Category::all();
+       return view('register.create',compact('navCat'));
     }
+
     public function store(){
         //Validation
         $this->validate(request(), [

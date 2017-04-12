@@ -5,7 +5,8 @@ Registration
 @endsection
 
 @section('content')
-<div class="container" id="registration"> <h1>Register</h1>
+<div class="container" id="registration">
+        <h1>Register</h1>
         <p>Please fill in all request form</p>
         <form method="post" action="/register" class="form-horizontal">
             {{ csrf_field() }}

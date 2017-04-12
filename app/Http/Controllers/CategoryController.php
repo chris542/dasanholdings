@@ -8,7 +8,12 @@ use App\Category;
 class CategoryController extends Controller
 {
     public function __construct(){
-        $this->middleware('admin');
+        $this->middleware('admin', ['except'=>'show']);
+    }
+
+    public function show(Category $category){
+       $navCat = Category::all();
+       return view('category.show', compact('category', 'navCat')); 
     }
     
     public function admin(){
@@ -25,13 +30,14 @@ class CategoryController extends Controller
         //Validate the form
         $this->validate(request(),[
             'name' => 'required|max:30',
-            'description' => 'required|min:1'
+            'description' => 'required|min:1',
         ]);
 
         //Assign to database
         $newCategory = Category::create([
             'name' => request('name'),
-            'description' => request('description')
+            'description' => request('description'),
+            'order' => (count(Category::all()) + 1)
         ]);
         
         //Go back to Admin Category
@@ -44,13 +50,15 @@ class CategoryController extends Controller
     public function update(Category $category ){
         $this->validate(request(),[
             'name' => 'required|max:30',
-            'description' => 'required|min:1'
+            'description' => 'required|min:1',
+            'order' => 'required'
         ]);
 
         //Assign to database
         $category->update([
             'name' => request('name'),
-            'description' => request('description')
+            'description' => request('description'),
+            'order' => request('order')
         ]);
         
         //Go back to Admin Category
@@ -58,7 +66,7 @@ class CategoryController extends Controller
         
     }
    public function destroy(Category $category){
-        $category->delete();
+       $category->delete();
        return redirect('/admcat');
     }
     

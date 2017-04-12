@@ -34,7 +34,7 @@
 
             <div class="col-md-2 navbar-logo">
                 <a href="/">
-                    <img class="img-responsive center-block" src="img/logo/Logo.png" alt="DasanHoldingsLtdLogo">
+                    <img class="img-responsive center-block" src="/img/logo/Logo.png" alt="DasanHoldingsLtdLogo">
                 </a>
             </div>
 
@@ -63,8 +63,8 @@
         
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                @foreach($categories as $category)
-              <li><a href="#">{{ $category->name }}</a></li>
+                @foreach($navCat as $category)
+              <li><a href="/category/{{ $category->id }}">{{ $category->name }}</a></li>
                 @endforeach
             </ul>
         </div>

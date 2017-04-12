@@ -1,6 +1,7 @@
 #cms {
     margin-left: 0;
     margin-right: 0;
+    position:relative;
     #sidebar-wrapper{
         background-color: $mainColour;
         .sidebar-nav li a {
@@ -14,14 +15,16 @@
         position:relative;
     }
     #menu-toggle {
+        position:absolute;
+        top:0;
+        margin-left:-15px;
         z-index:100;
-        margin-left: 35px;
     }
     #back-home {
-        z-index:100;
+        z-index:50;
         border-radius: 0;
         position:absolute;
-        right: 50px;
+        right: 0;
         a {
             color: $white;
             text-decoration:none;

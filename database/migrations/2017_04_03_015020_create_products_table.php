@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->string('img');
             $table->float('price', 8, 2);
+            $table->integer('minimum')->default(1);
             $table->integer('order')->default(0);
             $table->boolean('isTopProduct')->default(false);
             $table->integer('tpOrder')->default(0);

@@ -8,6 +8,14 @@ use App\Category;
 
 class ProductController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin',['except'=>'show']);
+    }
+    public function show(Product $product){
+       $navCat = Category::all();
+        
+       return view('product.show',compact('product', 'navCat')); 
+    }
    public function admin(){
       $products = Product::orderBy('category_id')->orderBy('order')->get(); 
       return view('admin.product.admin',compact('products'));
@@ -24,6 +32,7 @@ class ProductController extends Controller
            'category_id' => 'required',
            'description' => 'required',
            'price'=> 'required|min:1',
+           'minimum' => 'required',
            'img' => 'required|mimes:jpeg,png,jpg',
        ]);
        //Upload the file
@@ -41,6 +50,7 @@ class ProductController extends Controller
             'category_id' => request('category_id'),
             'description' => request('description'),
             'price'=>request('price'),
+            'minimum' => request('minimum'),
             'img'=> "$filename",
             'order'=>(count( $a ) + 1),
             'isTopProduct' => request('isTopProduct'),
@@ -61,6 +71,7 @@ class ProductController extends Controller
            'category_id' => 'required',
            'description' => 'required',
            'price'=> 'required|min:1',
+           'minimum' => 'required',
            'img' => 'mimes:jpeg,png,jpg',
            'order' => 'required'
        ]);
@@ -80,6 +91,7 @@ class ProductController extends Controller
             'category_id' => request('category_id'),
             'description' => request('description'),
             'price'=>request('price'),
+            'minimum' => request('minimum'),
             'img'=> "$filename",
             'order'=> request('order'),
             'isTopProduct' => request('isTopProduct'),

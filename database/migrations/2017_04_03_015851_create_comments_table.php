@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->integer('product_id');
             $table->integer('user_id');
             $table->text('body');
+            $table->integer('rating');
             $table->timestamps();
         });
     }

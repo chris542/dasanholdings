@@ -1,6 +1,4 @@
 <?php
-date_default_timezone_set('Pacific/Auckland');
-
 Route::GET('/','HomeController@index')->name('home');
 
 //Register //index = details //create = register //store = register complete
@@ -13,9 +11,14 @@ Route::GET('/login','SessionController@create');
 Route::POST('/login','SessionController@store');
 Route::GET('/logout','SessionController@destroy');
 
+//Category Page
+Route::GET('/category/{category}','CategoryController@show');
+
+//Single Product Page
+Route::GET('/product/{product}','ProductController@show');
+
 //Admin Pages
 Route::GET('/cms','AdminController@index');
-
 //BannerController
 Route::GET('/admbanner','BannerController@admin');
 Route::GET('/admbanner/create','BannerController@create');
@@ -43,5 +46,4 @@ Route::GET('/admpro/{product}/edit','ProductController@edit');
 Route::PATCH('/admpro/{product}','ProductController@update');
 Route::GET('/admpro/{product}/remove','ProductController@destroy');
 //RatingController
-//BannerController
-//BannerController
+//CommentController

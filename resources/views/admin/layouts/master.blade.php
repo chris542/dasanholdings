@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
-        <link rel="icon" href="favicon.ico" type="image/png">
+        <link rel="icon" href="favicon.png" type="image/png">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="/css/bootstrap-3.3.7/dist/css/bootstrap.min.css">
         <!--Fontawesome-->

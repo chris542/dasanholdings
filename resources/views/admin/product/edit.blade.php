@@ -43,6 +43,12 @@ Edit Product
             </div>
         </div>
         <div class="form-group">
+            <label class="col-sm-2 control-label" for="minimum">Minimum Qt : </label>
+            <div class="col-sm-10">
+                <input class="form-control" type="number" name="minimum" value="{{ $product->minimum }}" placeholder="{{ $product->minimum }}">
+            </div>
+        </div>
+        <div class="form-group">
             <label class="col-sm-2 control-label" for="isTopProduct">Top Product : </label>
             <div class="col-sm-10">
                 <input type="hidden" value="0" name="isTopProduct">

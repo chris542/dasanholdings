@@ -1,0 +1,111 @@
+#showProducts {
+    padding:2em 0;
+    .breadcrumb {
+        border-radius: 0;
+        background-color: $lightgray;
+        li > a {
+            text-decoration: none;
+            color: $mainColour;
+        }
+    }
+    .categories {
+        ul {
+            list-style:none;
+            padding:0;
+            margin:0;
+            background-color: $mainColour;
+            li {
+                &:hover {
+                    background-color: $white;
+                    a {
+                        color:$mainColour;
+                    }
+                }
+                a {
+                    padding: 1em;
+                    width: 100%;
+                    display:block;
+                    text-decoration:none;
+                    color:$white;
+                }
+            }
+            .active {
+                background-color: $subColour;
+            }
+        }
+    }
+    .products-page {
+        .thumbnail {
+            position:relative;
+            border-radius: 0;
+            overflow:hidden;
+            &:hover {
+                .details {
+                    opacity: 0.9;
+                }
+            }
+            .cart_btn {
+                position:absolute;
+                width: 100%;
+                left:0;
+                top:0;
+                text-align: right;
+                &:hover {
+                    a {
+                        i {
+                            border-radius: 100%;
+                            background-color: $subColour;
+                            color: $white;
+                        }
+                    }
+                }
+                a {
+                    i {
+                        font-size:1.2em;
+                        padding: 1em;
+                        color:$mainColour;
+                        transition: all 0.3s ease-in-out;
+                    }
+                }
+            }
+            .img-holder {
+                height:200px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                @include breakpoint(md){
+                    height: 150px;
+                }
+                @include breakpoint(sm){
+                    height: auto;
+                }
+                @include breakpoint(xs){
+                    height: auto;
+                }
+            }
+            .details {
+                transition:all 0.3s ease-in-out;
+                position:absolute;
+                left:0;
+                bottom:0;
+                height:50%;
+                width: 100%;
+                background-color: $mainColour;
+                opacity: 0;
+                &:hover {
+                    background-color: $subColour;
+                }
+                a {
+                    display:flex;
+                    flex-flow:column;
+                    justify-content:center;
+                    height:100%;
+                    *{
+                        color: $white;
+                        padding-left: 1em;
+                    }
+                }
+            }
+        }
+    }
+}

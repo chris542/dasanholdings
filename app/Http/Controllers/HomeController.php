@@ -12,10 +12,10 @@ class HomeController extends Controller
 {
    public function index(){
 
-       $categories = Category::all();
+       $navCat = Category::all();
        $banners = Banner::all();
        $topProducts = Product::where('isTopProduct', true)->orderby('tpOrder','asc')->get();
 
-        return view('welcome', compact('categories','banners','topProducts')); 
+        return view('welcome', compact('navCat','banners','topProducts')); 
    } 
 }

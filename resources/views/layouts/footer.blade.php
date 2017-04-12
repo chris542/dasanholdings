@@ -18,7 +18,7 @@
             <ul class="col-md-3">
                 <h4>Sitemaps</h4>
                 <li><a href="">Home</a></li>
-                @foreach($categories as $category)
+                @foreach($navCat as $category)
                     <li><a href="/category/{{ $category->id }}">{{ $category->name }}</a></li>
                 @endforeach
             </ul>

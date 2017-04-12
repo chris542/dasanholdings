@@ -22,6 +22,12 @@ Edit Category
             </div>
         </div>
         <div class="form-group">
+            <label class="col-sm-2 control-label" for="order">Order : </label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" name="order" placeholder="{{ $category->order }}" value="{{ $category->order }}">
+            </div>
+        </div>
+        <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 @include('layouts.errors')
             </div>
