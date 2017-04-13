@@ -6,20 +6,7 @@
 @section('content')
 
 <div id="showProducts" class="container">
-    <div class="categories col-md-3 hidden-xs hidden-sm">
-        <ul>
-            @foreach($navCat as $cat)
-                @if($cat->id == $category->id)
-                    <li class="active"><a href="/category/{{ $cat->id }}">{{ $cat->name }}</a></li>
-                @else
-                    <li><a href="/category/{{ $cat->id }}">{{ $cat->name }}</a></li>
-                @endif
-            @endforeach
-        </ul>
-        <!--BANNERS HERE!!!!-->
-
-        <!--BANNERS END!!!!-->
-    </div>
+    @include('layouts.sideCategoryNav')
     <div class="col-md-9 products-page">
        <ol class="breadcrumb">
            <li><a href="/">Home</a></li>

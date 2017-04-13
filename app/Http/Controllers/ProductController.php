@@ -12,7 +12,8 @@ class ProductController extends Controller
         $this->middleware('admin',['except'=>'show']);
     }
     public function show(Product $product){
-       return view('product.show',compact('product')); 
+        $category = $product->category;
+       return view('product.show',compact('product', 'category')); 
     }
    public function admin(){
       $products = Product::orderBy('category_id')->orderBy('order')->get(); 
