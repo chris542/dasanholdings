@@ -1,6 +1,6 @@
 <div id="contact" class="container">
+<div class="row">
     <h2>Contact Us</h2>
-    <div class="row">
         <div class="col-sm-6 col-md-4 map-container">
             <div id="map"></div>
         </div>

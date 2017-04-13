@@ -5,9 +5,12 @@
 @endsection
 @section('content')
 
-<div id="showProducts" class="container">
+<div id="showProducts" class="container"><div class="row">
+
+        <!--Category Nav-->
         @include('layouts.sideCategoryNav')
-        <div class="col-md-9 products-page">
+        <!--Category Nav End-->
+        <div class="col-md-10 products-page">
             <div class="row">
                 <ol class="breadcrumb">
                     <li><a href="/">Home</a></li>
@@ -41,6 +44,9 @@
                     </form>
                 </div>
             </div>
+            <!--Comment Section-->
+            @include('layouts.commentBox')
+            <!--End Comment Section-->
             <h3>Relevant Products</h3>
             <div class="carousel carousel-showmanymoveone slide" id="carousel-tilenav" data-interval="false">
                  <div class="carousel-inner">
@@ -73,6 +79,7 @@
             </div>
         </div>
 @include('layouts.contact')
+    </div>
 </div>
 
 

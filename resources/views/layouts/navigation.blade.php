@@ -31,13 +31,14 @@
 <!-- <SEARCH-NAV></SEARCH-NAV> -->
 <nav class="navbar navbar-default search-nav">
     <div class="container">
-
+        <div class="row">
+            
             <div class="col-md-2 navbar-logo">
                 <a href="/">
                     <img class="img-responsive center-block" src="{{ asset('/img/logo/Logo.png') }}" alt="DasanHoldingsLtdLogo">
                 </a>
             </div>
-
+            
             <div class="col-md-10 form-group navbar-search">
                 <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search Product..">
@@ -48,7 +49,8 @@
                        </span>
                 </div>          
             </div>
-
+                
+    </div>
     </div>
 </nav>
 <!-- <CATEGORY-NAV></CATEGORY-NAV> -->

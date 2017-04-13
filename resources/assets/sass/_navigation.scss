@@ -36,36 +36,38 @@
     border: none;
     background-color: $white;
     .container {
-        display:flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
-        .navbar-logo {
-            img {
-                width: 100%;
-                padding: 2em 0;
-                @include breakpoint(xs){
-                     width: 50%;
-                }
-                @include breakpoint(sm){
-                     width: 50%;
+       .row {
+            display:flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            .navbar-logo {
+                img {
+                    width: 100%;
+                    padding: 2em 0;
+                    @include breakpoint(xs){
+                         width: 50%;
+                    }
+                    @include breakpoint(sm){
+                         width: 50%;
+                    }
                 }
             }
-        }
-        .navbar-search {
-            margin: 0;
-            input {
-                border-radius: 0;
-                border-color: $mainColour;
-            }
-            button {
-                background-color: $mainColour;
-                border-color: $mainColour;
-                color:$white;
-                &:hover {
-                    background-color: $subColour;
-                    border-color: $subColour;
-                    color: $white;
+            .navbar-search {
+                margin: 0;
+                input {
+                    border-radius: 0;
+                    border-color: $mainColour;
+                }
+                button {
+                    background-color: $mainColour;
+                    border-color: $mainColour;
+                    color:$white;
+                    &:hover {
+                        background-color: $subColour;
+                        border-color: $subColour;
+                        color: $white;
+                    }
                 }
             }
         }
