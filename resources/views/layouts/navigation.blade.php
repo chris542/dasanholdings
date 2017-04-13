@@ -34,7 +34,7 @@
 
             <div class="col-md-2 navbar-logo">
                 <a href="/">
-                    <img class="img-responsive center-block" src="/img/logo/Logo.png" alt="DasanHoldingsLtdLogo">
+                    <img class="img-responsive center-block" src="{{ asset('/img/logo/Logo.png') }}" alt="DasanHoldingsLtdLogo">
                 </a>
             </div>
 

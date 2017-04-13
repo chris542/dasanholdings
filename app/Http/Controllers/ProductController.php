@@ -12,9 +12,7 @@ class ProductController extends Controller
         $this->middleware('admin',['except'=>'show']);
     }
     public function show(Product $product){
-       $navCat = Category::all();
-        
-       return view('product.show',compact('product', 'navCat')); 
+       return view('product.show',compact('product')); 
     }
    public function admin(){
       $products = Product::orderBy('category_id')->orderBy('order')->get(); 
@@ -36,13 +34,10 @@ class ProductController extends Controller
            'img' => 'required|mimes:jpeg,png,jpg',
        ]);
        //Upload the file
-        $tempFile = request()->file('img');
-        $filename= $tempFile->getClientOriginalName();
-        $ext = $tempFile->guessClientExtension();
-        $tempFile->storeAs('/public/products/', "$filename");
+       $filename = Product::uploadFile(request()->file('img'), '/public/products/');
 
         //Number of items in selected category
-        $a = Product::where('category_id', request('category_id'))->get();
+        $a = count( Product::where('category_id', request('category_id'))->get() );
 
        //Assign to Database
         $newProduct = Product::create([
@@ -52,7 +47,7 @@ class ProductController extends Controller
             'price'=>request('price'),
             'minimum' => request('minimum'),
             'img'=> "$filename",
-            'order'=>(count( $a ) + 1),
+            'order'=>($a + 1),
             'isTopProduct' => request('isTopProduct'),
         ]);
        //Go back to Admin Product Page 
@@ -77,10 +72,7 @@ class ProductController extends Controller
        ]);
        //Upload the file
         if(request()->img){
-            $tempFile = request()->file('img');
-            $filename= $tempFile->getClientOriginalName();
-            $ext = $tempFile->guessClientExtension();
-            $tempFile->storeAs('/public/products/', "$filename");
+           $filename = Product::uploadFile(request()->file('img'), '/public/products/');
         } else {
             $filename = $product->img;
         }

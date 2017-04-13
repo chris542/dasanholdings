@@ -31,10 +31,7 @@ class BannerController extends Controller
         ]);
 
         //Upload the file
-        $tempFile = request()->file('bgImg');
-        $filename= $tempFile->getClientOriginalName();
-        $ext = $tempFile->guessClientExtension();
-        $tempFile->storeAs('/public/banners/', "$filename");
+       $filename = Banner::uploadFile(request()->file('bgImg'), '/public/banners/');
 
         //Assign to database
         $newBanner = Banner::create([
@@ -61,10 +58,7 @@ class BannerController extends Controller
        
        //Upload the file
         if(request()->bgImg){
-            $tempFile = request()->file('bgImg');
-            $filename= $tempFile->getClientOriginalName();
-            $ext = $tempFile->guessClientExtension();
-            $tempFile->storeAs('/public/banners/', "$filename");
+           $filename = Banner::uploadFile(request()->file('bgImg'), '/public/banners/');
         } else {
             $filename = $banner->bgImg;
         }
@@ -81,7 +75,7 @@ class BannerController extends Controller
     }
 
    public function destroy(Banner $banner){
-        $banner->delete();
+       $banner->delete();
        return redirect('/admbanner');
     }
 }

@@ -11,8 +11,7 @@ class SessionController extends Controller
      $this->middleware('guest', ['except' => 'destroy']);        
     }
    public function create(){
-       $navCat = Category::all();
-       return view('session.create', compact('navCat'));
+       return view('session.create');
    } 
    public function store(){
        //Authenticate if validation is wrong

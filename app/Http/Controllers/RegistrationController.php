@@ -19,8 +19,7 @@ class RegistrationController extends Controller
     }
     
     public function create(){
-       $navCat = Category::all();
-       return view('register.create',compact('navCat'));
+       return view('register.create');
     }
 
     public function store(){

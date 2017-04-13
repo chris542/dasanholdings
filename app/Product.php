@@ -20,4 +20,15 @@ class Product extends Model
     public function comment(){
        return $this->hasMany('App\Comment');
     }
+    public static function topProduct(){
+        return static::where('isTopProduct', true)->orderby('tpOrder','asc')->get();
+    }
+
+    public static function uploadFile($reqFile, $url){
+        $tempFile = $reqFile;
+        $filename= $tempFile->getClientOriginalName();
+        $ext = $tempFile->guessClientExtension();
+        $tempFile->storeAs($url, "$filename");
+        return $filename;
+    }
 }

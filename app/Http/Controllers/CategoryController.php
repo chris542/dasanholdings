@@ -12,14 +12,11 @@ class CategoryController extends Controller
     }
 
     public function show(Category $category){
-       $navCat = Category::all();
-       return view('category.show', compact('category', 'navCat')); 
+       return view('category.show', compact('category')); 
     }
     
     public function admin(){
-        $categories = Category::all();
-
-        return view('admin.category.admin', compact('categories'));
+        return view('admin.category.admin');
     }
 
     public function create(){
