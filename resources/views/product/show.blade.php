@@ -12,34 +12,42 @@
         <!--Category Nav End-->
         <div class="col-md-10 products-page">
             <div class="row">
-                <ol class="breadcrumb">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/category/{{ $product->category->id }}">{{ $product->category->name }}</a></li>
-                    <li class="active"><a href="/category/{{ $product->id }}">{{ $product->name }}</a></li>
-                </ol>
+                <div class="col-md-12">
+                    <ol class="breadcrumb">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/category/{{ $product->category->id }}">{{ $product->category->name }}</a></li>
+                        <li class="active"><a href="/category/{{ $product->id }}">{{ $product->name }}</a></li>
+                    </ol>
+                </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 thumbnail">
-                    <img class="img-responsive center-block" src="{{ asset('storage/products/') }}/{{ $product->img }}" alt="">
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img class="img-responsive center-block" src="{{ asset('storage/products/') }}/{{ $product->img }}" alt="">
+                    </div>
                 </div>
                 <div class="col-sm-8">
                     <h2>{{ $product->name }}</h2>
-                    @for($i = 0; $i < $product->rating; $i++)
-                        <i class="fa fa-star"></i>
-                    @endfor
-                    @for($i = 0; $i < ( 5 - $product->rating ); $i++)
-                        <i class="fa fa-star-o"></i>
-                    @endfor
+                    <div class="rating_box">
+                        @for($i = 0; $i < $product->rating; $i++)
+                            <i class="fa fa-star"></i>
+                        @endfor
+                        @for($i = 0; $i < ( 5 - $product->rating ); $i++)
+                            <i class="fa fa-star-o"></i>
+                        @endfor
+                    </div>
                    <p> {{ $product->description }}</p>
                     <form method="post" action="/" class="form-horizontal">
                         {{ csrf_field() }}
                         <div class="row">
-                            <div class="col-sm-8">
-                                <input class="form-control" type="number" name="quantity" value="{{ $product->minimum }}" min="{{ $product->minimum }}" placeholder="Quantity">
-                            </div>
-                            <div class="col-sm-4">
-                              <button type="submit" class="btn btn-default btn-primary">Add to Cart</button>
-                            </div>
+                                <div class="col-sm-12">
+                                    <div class="input-group">
+                                        <input class="form-control" type="number" name="quantity" value="{{ $product->minimum }}" min="{{ $product->minimum }}" placeholder="Quantity">
+                                        <span class="input-group-btn">
+                                          <button type="submit" class="btn btn-default btn-primary">Add to Cart</button>
+                                        </span>
+                                    </div>
+                                </div>
                         </div> 
                     </form>
                 </div>

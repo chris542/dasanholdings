@@ -17,6 +17,10 @@ Route::GET('/category/{category}','CategoryController@show');
 //Single Product Page
 Route::GET('/product/{product}','ProductController@show');
 
+//CommentController
+Route::POST('/product/{product}/comment','CommentController@store');
+Route::GET('/comment/{comment}/remove','CommentController@destroy');
+
 //Admin Pages
 Route::GET('/cms','AdminController@index');
 //BannerController
@@ -45,5 +49,3 @@ Route::POST('/admpro','ProductController@store');
 Route::GET('/admpro/{product}/edit','ProductController@edit');
 Route::PATCH('/admpro/{product}','ProductController@update');
 Route::GET('/admpro/{product}/remove','ProductController@destroy');
-//RatingController
-//CommentController

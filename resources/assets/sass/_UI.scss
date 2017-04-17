@@ -53,6 +53,12 @@ a {
 textarea {
     resize: vertical;
 }
+.rating_box { 
+    width: 100%;
+    i {
+        font-size: 1.5em;
+    }
+}
 #map {
     height: 400px;
     width: 100%;

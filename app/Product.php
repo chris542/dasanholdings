@@ -31,4 +31,12 @@ class Product extends Model
         $tempFile->storeAs($url, "$filename");
         return $filename;
     }
+    public function addComment($user_id, $body, $rating){
+        $this->comment()->create([
+            'product_id' => $this->id,
+            'user_id' => $user_id,
+            'body'=> $body,
+            'rating' => $rating
+        ]);
+    }
 }

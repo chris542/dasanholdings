@@ -30,18 +30,18 @@
         }
         .details {
             border: 1px solid $white;
-            background-color: $mainColour;
+            background-color: $lightgray;
             transition: 0.3s ease-in-out all;
             height:100px;
             display:flex;
             flex-flow:column nowrap;
             justify-content:center;
             h4{
-                color: $white;
+                color: $mainColour;
                 padding: 0.5em 1em;
             }
             p{
-                color: $white;
+                color: $mainColour;
                 padding:0 1em;
             }
         }

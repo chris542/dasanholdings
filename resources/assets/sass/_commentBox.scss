@@ -1,0 +1,28 @@
+.commentBox {
+    .comments {
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        .username {
+            font-weight:bold;
+            padding-right: 1em;
+        }
+        .rating {
+            padding-right:1em;
+        }
+        .body {
+            flex:1;
+        }
+        .time {
+            color:$gray;
+        }
+        .delete {
+            padding-left:1em;
+        }
+    }
+    .pleaselogin {
+        text-align: center;
+        font-style:italic;
+        color:$gray;
+    }
+}

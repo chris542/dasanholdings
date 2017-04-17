@@ -13,7 +13,8 @@ class ProductController extends Controller
     }
     public function show(Product $product){
         $category = $product->category;
-       return view('product.show',compact('product', 'category')); 
+        $comments = $product->comment;
+       return view('product.show',compact('product', 'category', 'comments')); 
     }
    public function admin(){
       $products = Product::orderBy('category_id')->orderBy('order')->get(); 
