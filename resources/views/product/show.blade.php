@@ -37,7 +37,8 @@
                         @endfor
                     </div>
                    <p> {{ $product->description }}</p>
-                    <form method="post" action="/" class="form-horizontal">
+                    @if(Auth::check())
+                    <form method="post" action="/addtocart" class="form-horizontal">
                         {{ csrf_field() }}
                         <div class="row">
                                 <div class="col-sm-12">
@@ -50,6 +51,7 @@
                                 </div>
                         </div> 
                     </form>
+                    @endif
                 </div>
             </div>
             <!--Comment Section-->
@@ -65,11 +67,13 @@
                     <div class="item">
                     @endif
                        <div class="single-item col-xs-12 col-sm-6 col-md-2">
+                            @if(Auth::check())
                             <div class="addtocart">
                                 <a href="/addtocart">
                                     <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 </a>
                             </div>
+                            @endif
                           <a href="/product/{{ $pro->id }} ">
                             <img src="{{ asset('storage/products') }}/{{ $pro->img }}" class="img-responsive center-block">
                             <div class="details">

@@ -9,24 +9,31 @@ use App\Product;
 class CommentController extends Controller
 {
     public function store(Product $product){
-        //Validate the body
-        $this->validate(request(), [
-          'body'=>'required|min:1|max:50',
-          'rating' => 'required'
-        ]);
 
-        //Store body in database
-        $product->addComment(request('user_id'), request('body'), request('rating'));
+        if(count($product->comment->where('user_id', request('user_id')))){
+            return back()->withErrors([
+                'message' => 'You have already reviewed on this product!'
+            ]);
+        } else {
+            //Validate the body
+            $this->validate(request(), [
+              'body'=>'required|min:1|max:50',
+              'rating' => 'required'
+            ]);
 
-        //Average Rating
-        $product->updateRating();
-        
+            //Add comment to product
+            $product->addComment(request('user_id'), request('body'), request('rating'));
 
-        //return
-        return back();
+            //Average Rating
+            $product->updateRating();
+
+            //return
+            return back();            
+        }
     }
     public function destroy(Comment $comment){
         $comment->delete();
+        $comment->product->updateRating();
         return back(); 
     }
 }

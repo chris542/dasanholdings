@@ -45,9 +45,13 @@ class Product extends Model
         foreach($allRatings as $rating){
             $sum += $rating;
         }
-        $averageRating = $sum/count($allRatings);
+        if($sum > 0){
+            $averageRating = $sum/count($allRatings);
+        } else {
+            $averageRating = 5;
+        }
         $this->update([
-            'rating'=>$averageRating
+            'rating'=> $averageRating
         ]);
    }
 }
