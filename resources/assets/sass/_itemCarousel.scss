@@ -4,6 +4,9 @@
         &:hover {
            .details {
                 background-color: $subColour;
+                h4, p {
+                    color:$white;
+                }
             }
         }
         .addtocart{

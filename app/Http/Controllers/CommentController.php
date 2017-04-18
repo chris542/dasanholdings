@@ -18,6 +18,10 @@ class CommentController extends Controller
         //Store body in database
         $product->addComment(request('user_id'), request('body'), request('rating'));
 
+        //Average Rating
+        $product->updateRating();
+        
+
         //return
         return back();
     }

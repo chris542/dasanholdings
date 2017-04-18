@@ -30,6 +30,11 @@ Dasan Login
                 </div>
             </div>   
             <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-6">
+                    Haven't registered? <a href="/register">Register now</a>!
+                </div>
+            </div>
+            <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-10">
                   <button type="submit" class="btn btn-default btn-primary">Login</button>
                 </div>

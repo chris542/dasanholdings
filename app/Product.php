@@ -39,4 +39,15 @@ class Product extends Model
             'rating' => $rating
         ]);
     }
+    public function updateRating(){
+        $allRatings = $this->comment->pluck('rating');
+        $sum = 0;
+        foreach($allRatings as $rating){
+            $sum += $rating;
+        }
+        $averageRating = $sum/count($allRatings);
+        $this->update([
+            'rating'=>$averageRating
+        ]);
+   }
 }
