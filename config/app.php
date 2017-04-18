@@ -177,6 +177,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        //Cart
+        'Anam\Phpcart\CartServiceProvider'
     ],
 
     /*
@@ -225,7 +227,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Cart' => 'Anam\Phpcart\Facades\Cart'
     ],
 
 ];
