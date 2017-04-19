@@ -1,0 +1,28 @@
+#myCart {
+    padding: 3em 15px;
+    .price {
+        text-align: center;
+    }
+    .update, .remove {
+        text-align: right;
+    }
+    .summary {
+        text-align: right;   
+        .calculations{
+            margin-bottom: 1em;
+        }
+        .total, .tax {
+            @extend .calculations; 
+        }
+        .TOTAL {
+            @extend .calculations; 
+            font-size: 2em;
+            font-weight:bold;
+        }
+    }
+    .alert {
+        padding:5em 0;
+        text-align: center;
+        font-style: italic;
+    }
+}

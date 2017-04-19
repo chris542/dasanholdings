@@ -1,14 +1,6 @@
 #showProducts {
     padding-top: 2em;
     padding-bottom: 2em;
-    .breadcrumb {
-        border-radius: 0;
-        background-color: $lightgray;
-        li > a {
-            text-decoration: none;
-            color: $mainColour;
-        }
-    }
     //sideCategoryNav 
     .categories {
         ul {
@@ -37,55 +29,55 @@
         }
     }
     //product-page MAIN section**********************************
-    .products-page {
-        .thumbnail {
-            position:relative;
-            border-radius: 0;
-            overflow:hidden;
-            &:hover {
-                .details {
-                    opacity: 0.9;
-                }
+.products-page {
+    .thumbnail {
+        position:relative;
+        border-radius: 0;
+        overflow:hidden;
+        &:hover {
+            .details {
+                opacity: 0.9;
             }
-            .cart_btn {
-                position:absolute;
-                width: 100%;
-                left:0;
-                top:0;
-                text-align: right;
-                &:hover {
-                    a {
-                        i {
-                            border-radius: 100%;
-                            background-color: $subColour;
-                            color: $white;
-                        }
-                    }
-                }
+        }
+        .cart_btn {
+            position:absolute;
+            width: 100%;
+            left:0;
+            top:0;
+            text-align: right;
+            &:hover {
                 a {
                     i {
-                        font-size:1.2em;
-                        padding: 1em;
-                        color:$mainColour;
-                        transition: all 0.3s ease-in-out;
+                        border-radius: 100%;
+                        background-color: $subColour;
+                        color: $white;
                     }
                 }
             }
-            .img-holder {
-                height:200px;
-                display:flex;
-                justify-content: center;
-                align-items: center;
-                @include breakpoint(md){
-                    height: 150px;
-                }
-                @include breakpoint(sm){
-                    height: auto;
-                }
-                @include breakpoint(xs){
-                    height: auto;
+            a {
+                i {
+                    font-size:1.2em;
+                    padding: 1em;
+                    color:$mainColour;
+                    transition: all 0.3s ease-in-out;
                 }
             }
+        }
+        .img-holder {
+            height:200px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            @include breakpoint(md){
+                height: 150px;
+            }
+            @include breakpoint(sm){
+                height: auto;
+            }
+            @include breakpoint(xs){
+                height: auto;
+            }
+        }
             .details {
                 transition:all 0.3s ease-in-out;
                 position:absolute;
@@ -93,10 +85,13 @@
                 bottom:0;
                 height:50%;
                 width: 100%;
-                background-color: $mainColour;
+                background-color: $lightgray;
                 opacity: 0;
                 &:hover {
                     background-color: $subColour;
+                    a > * {
+                        color: $white;
+                    }
                 }
                 a {
                     display:flex;
@@ -104,7 +99,7 @@
                     justify-content:center;
                     height:100%;
                     *{
-                        color: $white;
+                        color: $mainColour;
                         padding-left: 1em;
                     }
                 }

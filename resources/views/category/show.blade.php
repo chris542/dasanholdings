@@ -14,7 +14,7 @@
                <li class="active"><a href="/category/{{ $category->id }}">{{ $category->name }}</a></li>
            </ol>
             <h2>{{ $category->name }}</h2>
-            <p>{{ $category->description }}</p>
+            <p>{!! nl2br(e($category->description)) !!}</p>
             <div class="row">
                 @foreach($category->product as $product)
                 <div class="col-md-3 col-sm-4">

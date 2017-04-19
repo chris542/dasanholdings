@@ -59,6 +59,14 @@ textarea {
         font-size: 1.5em;
     }
 }
+.breadcrumb {
+        li > a {
+            color: $mainColour;
+            &:hover {
+                color: $subColour;
+            }
+        }
+}
 #map {
     height: 400px;
     width: 100%;

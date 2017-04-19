@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Product;
-use Anam\Phpcart\Cart;
+use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
    public function show(){
-       dd(Session::get);
-       return view('cart.show', compact('cartProducts'));
+       //Cart::destroy();
+       $cartProducts = Cart::content();
+       $topProducts = Product::topProduct();
+       return view('cart.show', compact('cartProducts' , 'topProducts'));
    } 
 
    public function store(){
@@ -18,15 +20,27 @@ class CartController extends Controller
         $product = Product::find(request('id'));
 
         //Add to cart
-        $cart = new Cart();
-        $cart->add([
-            'id'=> $product->id,
-            'name'=> $product->name,
-            'price'=> $product->price,
-            'img'=> $product->img,
-            'quantity'=> request('qt'),
+        Cart::add( [
+            'id' => $product->id,
+            'name' => $product->name,
+            'qty' => request('qt'),
+            'price' => $product->price,
+            'options' => ['img' => "$product->img"]
         ]);
 
         return back();
+   }
+   public function update(){
+       $rowID = request('rowID');
+       Cart::update($rowID, request('qt'));
+       return back();
+   }
+   public function destroy($rowID){
+       Cart::remove($rowID);
+      return back(); 
+   }
+   public function empty(){
+       Cart::destroy();
+      return back(); 
    }
 }
