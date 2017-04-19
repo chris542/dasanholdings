@@ -14,7 +14,7 @@ $(document).ready(function() {
 //Top Products Carousel
   $('.carousel-showmanymoveone .item').each(function(){
         var itemToClone = $(this);
-        for (var i=1;i<6;i++) {
+        for (var i=1;i<4;i++) {
           itemToClone = itemToClone.next();
           // wrap around if at end of item collection
           if (!itemToClone.length) {

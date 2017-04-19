@@ -1,5 +1,5 @@
 <!-- <CART-NAV></CART-NAV> -->
-<nav class="navbar navbar-default cart-nav">
+<nav class="navbar navbar-default cart-nav navbar-fixed-top">
         <div class="container">
                 <ul class="nav navbar-header">
                     <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
@@ -12,7 +12,11 @@
                 <div id="navbarCollapse" class="collapse navbar-collapse">
                     @if(Auth::check())
                     <ul class="nav navbar-nav">
-                        <li><a href="/mycart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart</a></li>
+                        <li><a href="/mycart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart
+                             @if(Cart::count() > 0)
+                            <span class="cartnumber">{{ Cart::count() }}</span>
+                            @endif
+                            </a></li>
                     </ul>
                     @endif
                     <ul class="nav navbar-nav navbar-right">
@@ -56,7 +60,7 @@
     </div>
 </nav>
 <!-- <CATEGORY-NAV></CATEGORY-NAV> -->
-<nav class="navbar navbar-default category-nav" role="navigation">
+<nav class="navbar navbar-default category-nav" role="navigation" data-spy="affix" data-offset-top="245">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">

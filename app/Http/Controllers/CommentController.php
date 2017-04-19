@@ -8,6 +8,9 @@ use App\Product;
 
 class CommentController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin', ['only'=>'admin']);
+    }
     public function admin(){
         $comments = Comment::all();
         return view('admin.comment.admin',compact('comments'));

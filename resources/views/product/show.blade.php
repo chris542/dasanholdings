@@ -38,12 +38,13 @@
                     </div>
                    <p> {!! nl2br(e($product->description)) !!}</p>
                     @if(Auth::check())
-                    <form method="post" action="/addtocart" class="form-horizontal">
+                    <form method="get" action="/addtocart" class="form-horizontal">
                         {{ csrf_field() }}
                         <div class="row">
                                 <div class="col-sm-12">
                                     <div class="input-group">
-                                        <input class="form-control" type="number" name="quantity" value="{{ $product->minimum }}" min="{{ $product->minimum }}" placeholder="Quantity">
+                                        <input type="hidden" name="id" value="{{ $product->id }}">
+                                        <input class="form-control" type="number" name="qt" value="{{ $product->minimum }}" min="{{ $product->minimum }}" placeholder="Quantity">
                                         <span class="input-group-btn">
                                           <button type="submit" class="btn btn-default btn-primary">Add to Cart</button>
                                         </span>
@@ -58,38 +59,40 @@
             @include('layouts.commentBox')
             <!--End Comment Section-->
             <h3>Relevant Products</h3>
-            <div class="carousel carousel-showmanymoveone slide" id="carousel-tilenav" data-interval="false">
-                 <div class="carousel-inner">
-                    @foreach($product->category->product as $key => $pro)
-                    @if($key == 0)
-                    <div class="item active">
-                    @else
-                    <div class="item">
-                    @endif
-                       <div class="single-item col-xs-12 col-sm-6 col-md-2">
-                            @if(Auth::check())
-                                <div class="addtocart">
-                                    <form action="/addtocart">
-                                        <input type="hidden" name="id" value="{{ $product->id }}">
-                                        <input type="hidden" name="qt" value="1">
-                                        <button type="submit"><i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                              </button>
-                                    </form>
+            <div class="row col-md-12">
+                <div class="carousel carousel-showmanymoveone slide" id="carousel-tilenav" data-interval="false">
+                     <div class="carousel-inner">
+                        @foreach($product->category->product as $key => $pro)
+                        @if($key == 0)
+                        <div class="item active">
+                        @else
+                        <div class="item">
+                        @endif
+                           <div class="single-item col-xs-12 col-sm-6 col-md-3">
+                                @if(Auth::check())
+                                    <div class="addtocart">
+                                        <form action="/addtocart">
+                                            <input type="hidden" name="id" value="{{ $product->id }}">
+                                            <input type="hidden" name="qt" value="1">
+                                            <button type="submit"><i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                                  </button>
+                                        </form>
+                                    </div>
+                                @endif
+                              <a href="/product/{{ $pro->id }} ">
+                                <img src="{{ asset('storage/products') }}/{{ $pro->img }}" class="img-responsive center-block">
+                                <div class="details">
+                                    <h4>{{$pro->name}}</h4>
+                                    <p>${{$pro->price}}</p>
                                 </div>
-                            @endif
-                          <a href="/product/{{ $pro->id }} ">
-                            <img src="{{ asset('storage/products') }}/{{ $pro->img }}" class="img-responsive center-block">
-                            <div class="details">
-                                <h4>{{$pro->name}}</h4>
-                                <p>${{$pro->price}}</p>
-                            </div>
-                          </a>
-                       </div>
+                              </a>
+                           </div>
+                        </div>
+                        @endforeach
+                     </div>
+                     <a class="left carousel-control" href="#carousel-tilenav" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                     <a class="right carousel-control" href="#carousel-tilenav" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
                     </div>
-                    @endforeach
-                 </div>
-                 <a class="left carousel-control" href="#carousel-tilenav" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                 <a class="right carousel-control" href="#carousel-tilenav" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
                 </div>
             </div>
         </div>

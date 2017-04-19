@@ -25,7 +25,7 @@ Admin Products
             <tr>
                 <td class="col-xs-2">{{ $product->category->name }}</td>
                 <td class="col-xs-2">{{ $product->name }}</td>
-                <td class="col-xs-1">{{ $product->price }}</td>
+                <td class="col-xs-1">${{ $product->price }}</td>
                 <td class="col-xs-1">{{ $product->order }}</td>
                     @if($product->isTopProduct)
                 <td class="col-xs-1"><i class="fa fa-check" aria-hidden="true"></i></td>

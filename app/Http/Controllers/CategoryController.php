@@ -65,6 +65,7 @@ class CategoryController extends Controller
     }
    public function destroy(Category $category){
        $category->delete();
+       $category->product->delete();
        return redirect('/admcat');
     }
     

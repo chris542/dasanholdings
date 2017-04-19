@@ -60,12 +60,12 @@ textarea {
     }
 }
 .breadcrumb {
-        li > a {
-            color: $mainColour;
-            &:hover {
-                color: $subColour;
-            }
+    li > a {
+        color: $mainColour;
+        &:hover {
+            color: $subColour;
         }
+    }
 }
 #map {
     height: 400px;

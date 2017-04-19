@@ -8,6 +8,9 @@ use App\Product;
 
 class TopProductController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin');
+    }
    public function admin(){
       $products = Product::where('isTopProduct','1')->orderBy('tpOrder')->get(); 
       return view('admin.product.adminTop',compact('products'));
