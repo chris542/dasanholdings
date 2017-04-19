@@ -8,8 +8,13 @@ use App\Product;
 
 class CommentController extends Controller
 {
+    public function admin(){
+        $comments = Comment::all();
+        return view('admin.comment.admin',compact('comments'));
+    }
     public function store(Product $product){
 
+        //If the user has reviewed already, you can't review
         if(count($product->comment->where('user_id', request('user_id')))){
             return back()->withErrors([
                 'message' => 'You have already reviewed on this product!'

@@ -49,3 +49,5 @@ Route::POST('/admpro','ProductController@store');
 Route::GET('/admpro/{product}/edit','ProductController@edit');
 Route::PATCH('/admpro/{product}','ProductController@update');
 Route::GET('/admpro/{product}/remove','ProductController@destroy');
+//CommentController
+Route::GET('/admcm','CommentController@admin');

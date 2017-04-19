@@ -10,14 +10,16 @@
                     </button>
                 </ul>
                 <div id="navbarCollapse" class="collapse navbar-collapse">
+                    @if(Auth::check())
                     <ul class="nav navbar-nav">
                         <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart</a></li>
                     </ul>
+                    @endif
                     <ul class="nav navbar-nav navbar-right">
                         @if(Auth::check())
                             @if(Auth::user()->isAdmin == 1)
                             <li><a href="/cms"><i class="fa fa-unlock-alt"></i> Manage</a></li>
-                        @endif
+                            @endif
                         <li><a href=""><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->first_name }}</a></li>
                         <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                         @else
