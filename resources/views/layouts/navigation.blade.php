@@ -12,7 +12,7 @@
                 <div id="navbarCollapse" class="collapse navbar-collapse">
                     @if(Auth::check())
                     <ul class="nav navbar-nav">
-                        <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart</a></li>
+                        <li><a href="/mycart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart</a></li>
                     </ul>
                     @endif
                     <ul class="nav navbar-nav navbar-right">

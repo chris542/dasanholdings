@@ -68,11 +68,14 @@
                     @endif
                        <div class="single-item col-xs-12 col-sm-6 col-md-2">
                             @if(Auth::check())
-                            <div class="addtocart">
-                                <a href="/addtocart">
-                                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                </a>
-                            </div>
+                                <div class="addtocart">
+                                    <form action="/addtocart">
+                                        <input type="hidden" name="id" value="{{ $product->id }}">
+                                        <input type="hidden" name="qt" value="1">
+                                        <button type="submit"><i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                              </button>
+                                    </form>
+                                </div>
                             @endif
                           <a href="/product/{{ $pro->id }} ">
                             <img src="{{ asset('storage/products') }}/{{ $pro->img }}" class="img-responsive center-block">

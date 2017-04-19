@@ -21,6 +21,10 @@ Route::GET('/product/{product}','ProductController@show');
 Route::POST('/product/{product}/comment','CommentController@store');
 Route::GET('/comment/{comment}/remove','CommentController@destroy');
 
+//CartController
+Route::GET('/mycart','CartController@show');
+Route::GET('/addtocart','CartController@store');
+
 //Admin Pages
 Route::GET('/cms','AdminController@index');
 //BannerController
