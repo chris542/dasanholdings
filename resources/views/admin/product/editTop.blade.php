@@ -13,7 +13,7 @@ Edit Top Product
         <div class="form-group">
             <label class="col-sm-2 control-label" for="name">Name : </label>
             <div class="col-sm-10">
-                <input class="form-control" type="text" name="name" placeholder="{{ $product->name }}" value="{{ $product->name }} ">
+                <input class="form-control" type="text" name="name" placeholder="{{ $product->name }}" value="{{ $product->name }} " required>
             </div>
         </div>
         <div class="form-group">
@@ -33,13 +33,13 @@ Edit Top Product
         <div class="form-group">
             <label class="col-sm-2 control-label" for="description">Description : </label>
             <div class="col-sm-10">
-                <textarea class="form-control" name="description" cols="30" rows="10" placeholder="{{ $product->description }}">{{ $product->description }}</textarea>
+                <textarea class="form-control" name="description" cols="30" rows="10" placeholder="{{ $product->description }}" required>{{ $product->description }}</textarea>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label" for="price">Price : </label>
             <div class="col-sm-10">
-                <input class="form-control" type="number" step="any" min="0" name="price" placeholder="{{ $product->price }}" value="{{ $product->price }}">
+                <input class="form-control" type="number" step="any" min="0" name="price" placeholder="{{ $product->price }}" value="{{ $product->price }}" required>
             </div>
         </div>
         <div class="form-group">
@@ -56,13 +56,13 @@ Edit Top Product
         <div class="form-group">
             <label class="col-sm-2 control-label" for="tpOrder">Order : </label>
             <div class="col-sm-10">
-                <input class="form-control" type="text" name="tpOrder" placeholder="{{ $product->tpOrder }}" value="{{ $product->tpOrder }}">
+                <input class="form-control" type="text" name="tpOrder" placeholder="{{ $product->tpOrder }}" value="{{ $product->tpOrder }}" required>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label" for="img">Image : </label>
             <div class="col-sm-10">
-                <img class="img-responsive center-block" src="{{ asset('storage/products') }}/{{ $product->img }}" alt="{{ $product->img }}">
+                <img class="img-responsive center-block" src="{{ asset('storage/products') }}/{{ $product->img }}" alt="{{ $product->img }}" required>
                 <input type="file" name="img">
             </div>
         </div>

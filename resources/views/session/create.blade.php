@@ -15,13 +15,13 @@ Dasan Login
            <div class="form-group">
                <label class="col-sm-3 control-label" for="email">Email :</label>
                 <div class="col-sm-6">
-                   <input class="form-control" type="text" name="email">
+                   <input class="form-control" type="text" name="email" required>
                 </div>
            </div>
            <div class="form-group">
                <label class="col-sm-3 control-label" for="password">Password :</label>
                 <div class="col-sm-6">
-                   <input class="form-control" type="password" name="password">
+                   <input class="form-control" type="password" name="password" required>
                 </div>
            </div>
             <div class="form-group">

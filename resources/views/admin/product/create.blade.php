@@ -12,7 +12,7 @@ Create Product
         <div class="form-group">
             <label class="col-sm-2 control-label" for="name">Name : </label>
             <div class="col-sm-10">
-                <input class="form-control" type="text" name="name">
+                <input class="form-control" type="text" name="name" required>
             </div>
         </div>
         <div class="form-group">
@@ -28,19 +28,19 @@ Create Product
         <div class="form-group">
             <label class="col-sm-2 control-label" for="description">Description : </label>
             <div class="col-sm-10">
-                <textarea class="form-control" name="description" cols="30" rows="10"></textarea>
+                <textarea class="form-control" name="description" cols="30" rows="10" required></textarea>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label" for="price">Price : </label>
             <div class="col-sm-10">
-                <input class="form-control" type="number" step="any" min="0" name="price" placeholder="0.00">
+                <input class="form-control" type="number" step="any" min="0" name="price" placeholder="0.00" required>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label" for="minimum">Minimum Qt : </label>
             <div class="col-sm-10">
-                <input class="form-control" type="number" name="minimum" value="1">
+                <input class="form-control" type="number" name="minimum" value="1" required>
             </div>
         </div>
         <div class="form-group">
@@ -53,7 +53,7 @@ Create Product
         <div class="form-group">
             <label class="col-sm-2 control-label" for="img">Image : </label>
             <div class="col-sm-10">
-                <input  type="file" name="img">
+                <input  type="file" name="img" required>
             </div>
         </div>
         <div class="form-group">

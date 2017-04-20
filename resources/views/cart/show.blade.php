@@ -38,8 +38,8 @@ My Cart
 
                     <td class="col-xs-1">
                         <div class="form-group">
-                            <input type="hidden" name="rowID" value="{{ $product->rowId }}">
-                            <input class="form-control" type="number" name="qt" min="{{ $product->options->minimum }}" value="{{ $product->qty }}">
+                            <input type="hidden" name="rowID" value="{{ $product->rowId }}" required>
+                            <input class="form-control" type="number" name="qt" min="{{ $product->options->minimum }}" value="{{ $product->qty }}" required>
                         </div>
                     </td>
                     <td class="col-xs-1 price">${{ $product->price }}</td>

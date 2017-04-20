@@ -13,7 +13,7 @@ Edit Product
         <div class="form-group">
             <label class="col-sm-2 control-label" for="name">Name : </label>
             <div class="col-sm-10">
-                <input class="form-control" type="text" name="name" placeholder="{{ $product->name }}" value="{{ $product->name }} ">
+                <input class="form-control" type="text" name="name" placeholder="{{ $product->name }}" value="{{ $product->name }} " required>
             </div>
         </div>
         <div class="form-group">
@@ -33,19 +33,19 @@ Edit Product
         <div class="form-group">
             <label class="col-sm-2 control-label" for="description">Description : </label>
             <div class="col-sm-10">
-                <textarea class="form-control" name="description" cols="30" rows="10" placeholder="{{ $product->description }}">{{ $product->description }}</textarea>
+                <textarea class="form-control" name="description" cols="30" rows="10" placeholder="{{ $product->description }}" required>{{ $product->description }}</textarea>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label" for="price">Price : </label>
             <div class="col-sm-10">
-                <input class="form-control" type="number" step="any" min="0" name="price" placeholder="{{ $product->price }}" value="{{ $product->price }}">
+                <input class="form-control" type="number" step="any" min="0" name="price" placeholder="{{ $product->price }}" value="{{ $product->price }}" required>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label" for="minimum">Minimum Qt : </label>
             <div class="col-sm-10">
-                <input class="form-control" type="number" name="minimum" value="{{ $product->minimum }}" placeholder="{{ $product->minimum }}">
+                <input class="form-control" type="number" name="minimum" value="{{ $product->minimum }}" placeholder="{{ $product->minimum }}" required>
             </div>
         </div>
         <div class="form-group">

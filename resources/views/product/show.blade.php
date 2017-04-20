@@ -44,7 +44,7 @@
                                 <div class="col-sm-12">
                                     <div class="input-group">
                                         <input type="hidden" name="id" value="{{ $product->id }}">
-                                        <input class="form-control" type="number" name="qt" value="{{ $product->minimum }}" min="{{ $product->minimum }}" placeholder="Quantity">
+                                        <input class="form-control" type="number" name="qt" value="{{ $product->minimum }}" min="{{ $product->minimum }}" placeholder="Quantity" required>
                                         <span class="input-group-btn">
                                           <button type="submit" class="btn btn-default btn-primary">Add to Cart</button>
                                         </span>

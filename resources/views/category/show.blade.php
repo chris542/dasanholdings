@@ -19,8 +19,13 @@
                 @foreach($category->product as $product)
                 <div class="col-md-3 col-sm-4">
                         <div class="thumbnail">
-                                <div class="cart_btn">
-                                    <a href="#"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                <div class="addtocart">
+                                    <form action="/addtocart">
+                                        <input type="hidden" name="id" value="{{ $product->id }}">
+                                        <input type="hidden" name="qt" value="{{ $product->minimum}}">
+                                        <button type="submit"><i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                              </button>
+                                    </form>
                                 </div>
                                 <div class="img-holder">
                                     <img class="img-responsive center-block" src="{{ asset('storage/products') }}/{{ $product->img }}" alt="">

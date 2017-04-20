@@ -38,7 +38,7 @@
                     <input class="form-control" type="hidden" name="product_id" value="{{ $product->id }}">
                     <input class="form-control" type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                 <div class="form-group">
-                    <textarea name="body" cols="30" rows="3" class="form-control" placeholder="Please leave your comment..."></textarea>
+                    <textarea name="body" cols="30" rows="3" class="form-control" placeholder="Please leave your comment..." maxlength="300" required></textarea>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="rating">Rating : </label>
