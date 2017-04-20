@@ -28,7 +28,10 @@ class CartController extends Controller
             'name' => $product->name,
             'qty' => request('qt'),
             'price' => $product->price,
-            'options' => ['img' => "$product->img"]
+            'options' => [
+                'img' => "$product->img",
+                'minimum'=>$product->minimum
+            ]
         ]);
 
         return back();

@@ -14,7 +14,7 @@
                     <div class="addtocart">
                         <form action="/addtocart">
                             <input type="hidden" name="id" value="{{ $product->id }}">
-                            <input type="hidden" name="qt" value="1">
+                            <input type="hidden" name="qt" value="{{ $product->minimum}}">
                             <button type="submit"><i class="fa fa-cart-plus" aria-hidden="true"></i>
                                   </button>
                         </form>

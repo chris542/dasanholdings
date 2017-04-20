@@ -39,7 +39,7 @@ My Cart
                     <td class="col-xs-1">
                         <div class="form-group">
                             <input type="hidden" name="rowID" value="{{ $product->rowId }}">
-                            <input class="form-control" type="number" name="qt" value="{{ $product->qty }}">
+                            <input class="form-control" type="number" name="qt" min="{{ $product->options->minimum }}" value="{{ $product->qty }}">
                         </div>
                     </td>
                     <td class="col-xs-1 price">${{ $product->price }}</td>
@@ -76,8 +76,6 @@ My Cart
       <a href="/destroyCart" class="btn btn-default btn-danger">Empty Cart</a>
           <button type="submit" class="btn btn-default btn-primary">Purchase</button>
     </div>
-    
-    
 
     @else
     
