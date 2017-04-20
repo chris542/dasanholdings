@@ -67,6 +67,30 @@ textarea {
         }
     }
 }
+.addtocart{
+    position:absolute;
+    right:0;
+    top:0;
+    &:hover{
+        button {
+            border-radius: 100%;
+            color:white;
+            background-color: $subColour;
+        }
+    }
+    button {
+        background: none;
+        border: none;
+        text-decoration: none;
+        color:$mainColour;
+        text-align:center;
+        transition: 0.3s all ease-in-out;
+        i {
+            padding:1em;
+            font-size: 1.5em;
+        }
+    }
+}
 #map {
     height: 400px;
     width: 100%;
