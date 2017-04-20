@@ -26,7 +26,7 @@ class CommentController extends Controller
          
                 //Validate the body
                 $this->validate(request(), [
-                  'body'=>'required|min:1|max:50',
+                  'body'=>'required|min:1|max:300',
                   'rating' => 'required'
                 ]);
 
