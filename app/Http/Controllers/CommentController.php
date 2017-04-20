@@ -18,30 +18,32 @@ class CommentController extends Controller
     public function store(Product $product){
 
         //If the user has reviewed already, you can't review
-        if(count($product->comment->where('user_id', request('user_id')))){
-            return back()->withErrors([
-                'message' => 'You have already reviewed on this product!'
+          if(count($product->comment->where('user_id', request('user_id')))){
+                return back()->withErrors([
+                    'message' => 'You have already reviewed on this product!'
             ]);
-        } else {
-            //Validate the body
-            $this->validate(request(), [
-              'body'=>'required|min:1|max:50',
-              'rating' => 'required'
-            ]);
+            } else {
+         
+                //Validate the body
+                $this->validate(request(), [
+                  'body'=>'required|min:1|max:50',
+                  'rating' => 'required'
+                ]);
 
-            //Add comment to product
-            $product->addComment(request('user_id'), request('body'), request('rating'));
+                //Add comment to product
+                $product->addComment(request('user_id'), request('body'), request('rating'));
+                
+                //Average Rating
+                $product->updateRating(request('rating'));
 
-            //Average Rating
-            $product->updateRating();
-
-            //return
-            return back();            
+                //return
+                return back();            
         }
     }
     public function destroy(Comment $comment){
         $comment->delete();
-        $comment->product->updateRating();
+        //Will make average to 5 only when there are no reviews after deleting this comment
+        $comment->product->updateRating(5);
         return back(); 
     }
 }
