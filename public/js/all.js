@@ -96,6 +96,15 @@ $(document).ready(function() {
                 $('.subtotal').text("Subtotal : $" + data.subtotal);
                 $('.tax').text("Tax : $" + data.tax);
                 $('.total').text("Total : $" + data.total);
+                //POPUP cartUpdated
+                $('#cartUpdated').animate({
+                    bottom:'1px'
+                    }, 500, function(){
+                        $(this).delay(3000).animate({
+                            bottom: '-130px'
+                        }, 500)
+                    }
+                );
             },
             error: function(data) {
                 console.log(data);
