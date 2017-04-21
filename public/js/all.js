@@ -48,6 +48,15 @@ $(document).ready(function() {
                     $('.subtotal').text("Subtotal : $" + data.subtotal);
                     $('.tax').text("Tax : $" + data.tax);
                     $('.total').text("Total : $" + data.total);
+                    //POPUP cartUpdated
+                    $('#cartUpdated').animate({
+                        bottom:'1px'
+                        }, 500, function(){
+                            $(this).delay(3000).animate({
+                                bottom: '-130px'
+                            }, 500)
+                        }
+                    );
                     //if table has an input field of rowId :
                     if($('.table').find('input[name=rowID][value=' + data.cartDetail.rowId + ']').length){
                         //console.log('Table has an input field so I update the value')

@@ -24,6 +24,7 @@
             @yield('content')
         </div>
 
+        @include('layouts.cartUpdated')
         @include('layouts.footer')
 
         <!-- jQuery library -->

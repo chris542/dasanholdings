@@ -1,0 +1,14 @@
+#cartUpdated {
+    position:fixed;
+    right: 1px;
+    bottom: -130px;
+    z-index: 20000;
+    background-color: $subColour;
+    border: 2px solid $white;
+    color: $white;
+    padding: 15px;
+    transition: 0.5s all ease-in-out;
+    a {
+        color: white;
+    }
+}
