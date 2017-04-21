@@ -23,7 +23,7 @@ Route::GET('/comment/{comment}/remove','CommentController@destroy');
 
 //CartController
 Route::GET('/mycart','CartController@show');
-Route::GET('/addtocart','CartController@store');
+Route::POST('/addtocart','CartController@store')->name('addCart');
 Route::POST('/updateQuantity','CartController@update');
 Route::GET('/removeCart/{rowID}','CartController@destroy');
 Route::GET('/destroyCart','CartController@empty');

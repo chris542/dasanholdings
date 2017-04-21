@@ -11,10 +11,10 @@
         .calculations{
             margin-bottom: 1em;
         }
-        .total, .tax {
+        .subtotal, .tax {
             @extend .calculations; 
         }
-        .TOTAL {
+        .total {
             @extend .calculations; 
             font-size: 2em;
             font-weight:bold;

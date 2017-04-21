@@ -13,9 +13,7 @@
                     @if(Auth::check())
                     <ul class="nav navbar-nav">
                         <li><a href="/mycart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Cart
-                             @if(Cart::count() > 0)
-                            <span class="cartnumber">{{ Cart::count() }}</span>
-                            @endif
+                            <span class="cartnumber @if(Cart::count() == 0)hidden @endif">{{ Cart::count() }}</span>
                             </a></li>
                     </ul>
                     @endif

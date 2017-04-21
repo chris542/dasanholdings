@@ -38,7 +38,7 @@
                     </div>
                    <p> {!! nl2br(e($product->description)) !!}</p>
                     @if(Auth::check())
-                    <form method="get" action="/addtocart" class="form-horizontal">
+                        <form class="simpleAddToCart">
                         {{ csrf_field() }}
                         <div class="row">
                                 <div class="col-sm-12">
@@ -71,9 +71,10 @@
                            <div class="single-item col-xs-12 col-sm-6 col-md-3">
                                 @if(Auth::check())
                                     <div class="addtocart">
-                                        <form action="/addtocart">
+                                        <form class="simpleAddToCart">
+                                            {{csrf_field()}}
                                             <input type="hidden" name="id" value="{{ $product->id }}">
-                                            <input type="hidden" name="qt" value="1">
+                                            <input type="hidden" name="qt" value="{{ $product->minimum}}">
                                             <button type="submit"><i class="fa fa-cart-plus" aria-hidden="true"></i>
                                                   </button>
                                         </form>

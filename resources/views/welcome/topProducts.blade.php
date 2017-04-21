@@ -12,7 +12,8 @@
                <div class="single-item col-xs-12 col-sm-6 col-md-3">
                     @if(Auth::check())
                     <div class="addtocart">
-                        <form action="/addtocart">
+                        <form class="simpleAddToCart">
+                            {{csrf_field()}}
                             <input type="hidden" name="id" value="{{ $product->id }}">
                             <input type="hidden" name="qt" value="{{ $product->minimum}}">
                             <button type="submit"><i class="fa fa-cart-plus" aria-hidden="true"></i>

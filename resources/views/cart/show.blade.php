@@ -15,9 +15,8 @@ My Cart
     </div>
 
     <h2>My Cart</h2>
-    @if(count($cartProducts))
     <!--Table-->
-    <table class="table table-responsive table-condensed table-hover">
+    <table class="table table-responsive table-condensed table-hover {{ !Cart::count() ?  'hidden' : '' }}">
         <thead>
             <tr>
                 <td>Product</td>
@@ -31,11 +30,10 @@ My Cart
         <tbody>
             @foreach($cartProducts as $product)
             <tr>
-                <form method="post" action="/updateQuantity" class="form-horizontal">
+                <form class="form-horizontal updateCart">
                     {{ csrf_field() }}
                     <td class="col-xs-1">{{ $product->name }}</td>
                     <td class="col-xs-1"><img style="max-width: 30px" class="img-responsive" src="{{ asset('/storage/products') }}/{{ $product->options->img }}" alt=""></td>
-
                     <td class="col-xs-1">
                         <div class="form-group">
                             <input type="hidden" name="rowID" value="{{ $product->rowId }}" required>
@@ -57,35 +55,32 @@ My Cart
     <!--End Table-->
 
     <!--Total-->
-    <div class="row">
-        <div class="col-sm-12 summary">
-           <div class="total">
+    <div class="row summary {{ !Cart::count() ?  'hidden' : '' }}">
+        <div class="col-sm-12">
+           <div class="subtotal">
                Subtotal : ${{  Cart::subtotal() }} 
            </div>
            <div class="tax">
                Tax : ${{ ( Cart::tax()) }} 
            </div>
-           <div class="TOTAL">
+           <div class="total">
                Total : ${{ ( Cart::total()) }} 
            </div>
         </div>
     </div>
     <!--End of Total-->
 
-    <div class="form-group">
+    <div class="form-group {{ !Cart::count() ?  'hidden' : '' }}">
       <a href="/destroyCart" class="btn btn-default btn-danger">Empty Cart</a>
           <button type="submit" class="btn btn-default btn-primary">Purchase</button>
     </div>
-
-    @else
     
     <!--IF NO CART ITEMS-->
-    <div class="alert alert-danger">
+    <div class="alert alert-danger {{ Cart::count() ?  'hidden' : '' }}">
        <span class="emptyCart">You have an empty cart.</span>
     </div>
     <!--END IF NO CART ITEMS-->
 
-    @endif
 </div>
 @include('welcome.topProducts')
 @include('layouts.contact')
