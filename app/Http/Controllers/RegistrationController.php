@@ -11,6 +11,8 @@ class RegistrationController extends Controller
 {
     public function __construct(){
         $this->middleware('admin', ['only'=>'admin', 'destroy']);
+        $this->middleware('auth', [ 'except'=>'create' ]);
+        $this->middleware('guest', [ 'only'=>'create' ]);
     }
 
     public function admin(){
