@@ -54,7 +54,33 @@ class RegistrationController extends Controller
         //Go back home
         return redirect()->home();
     }
+    public function show(User $user){
+       return view('register.show', compact('user'));
+    }
+    public function edit(User $user){
+       return view('register.edit', compact('user'));
+    }
+    public function update(User $user){
+        //Validation
+        $this->validate(request(), [
+            'first_name' => 'required|min:2',
+            'last_name' => 'required|min:2',
+            'mobile'=> 'required|min:7',
+            'phone' => 'required|min:7',
+            'address' => 'required|min:5'
+        ]);
 
+        $user->update([ 
+            'first_name' => request('first_name'),
+            'last_name' => request('last_name'),
+            'mobile' => request('mobile'),
+            'phone' => request('phone'),
+            'address' => request('address'),
+            'isSubscribed' =>request('isSubscribed'),
+        ]);
+        
+        return redirect()->route('userDetail', ['user'=>$user->id]);
+    }
     public function destroy(User $user){
        $user->delete(); 
        return redirect('/admusers');

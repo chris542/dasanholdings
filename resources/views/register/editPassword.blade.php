@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
 @section('title')
-User Page
+Password Reset
 @endsection
 @section('content')
-<div id="userShow" class="container">
-Hi
+<div id="passwordReset" class="container">
+    passwordreset
 </div>
 @endsection

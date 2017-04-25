@@ -1,0 +1,36 @@
+#userDetails {
+    .details{
+        //Each Row
+        .row {
+            margin-bottom: 2em;
+            //Description Part
+            .description {
+                text-align: right;
+                @include breakpoint(xs) {
+                    text-align: left;
+                    margin-bottom: 1em;
+                }
+            }
+            //Data Part
+            .data {
+            }
+        }
+        .btn {
+                @include breakpoint(xs) {
+                    width:100%;
+                }
+        }
+    }
+}
+
+#userEdit {
+    .buttons {
+        button, a{
+            width: 80px;
+            @include breakpoint(xs) {
+                width: 100%;
+                margin-bottom:1em;
+            }
+        }
+    }
+}
