@@ -30,19 +30,19 @@ My Cart
         <tbody>
             @foreach($cartProducts as $product)
             <tr>
-                <form class="form-horizontal updateCart">
+                <form id="product-{{ $product->id }}" class="form-horizontal updateCart">
                     {{ csrf_field() }}
                     <td class="col-xs-1">{{ $product->name }}</td>
                     <td class="col-xs-1"><img style="max-width: 30px" class="img-responsive" src="{{ asset('/storage/products') }}/{{ $product->options->img }}" alt=""></td>
                     <td class="col-xs-1">
                         <div class="form-group">
-                            <input type="hidden" name="rowID" value="{{ $product->rowId }}" required>
-                            <input class="form-control" type="number" name="qt" min="{{ $product->options->minimum }}" value="{{ $product->qty }}" required>
+                            <input form="product-{{ $product->id }}" type="hidden" name="rowID" value="{{ $product->rowId }}" required>
+                            <input form="product-{{ $product->id }}" class="form-control" type="number" name="qt" min="{{ $product->options->minimum }}" value="{{ $product->qty }}" required>
                         </div>
                     </td>
                     <td class="col-xs-1 price">${{ $product->price }}</td>
                     <td class="col-xs-1 update">
-                      <button type="submit" class="btn btn-default">Update</button>
+                      <button form="product-{{ $product->id }}" type="submit" class="btn btn-default">Update</button>
                     </td>
                     <td class="col-xs-1 remove">
                         <a class="btn btn-default btn-danger" href="/removeCart/{{ $product->rowId }}"><i class="fa fa-times"></i></a>
@@ -66,14 +66,14 @@ My Cart
            <div class="total">
                Total : ${{ ( Cart::total()) }} 
            </div>
+            <div class="form-group cart_controllers">
+              <a href="/destroyCart" class="btn btn-default btn-danger">Empty Cart</a>
+              <button type="submit" class="btn btn-default btn-primary">Purchase</button>
+            </div>
         </div>
     </div>
     <!--End of Total-->
 
-    <div class="form-group {{ !Cart::count() ?  'hidden' : '' }}">
-      <a href="/destroyCart" class="btn btn-default btn-danger">Empty Cart</a>
-          <button type="submit" class="btn btn-default btn-primary">Purchase</button>
-    </div>
     
     <!--IF NO CART ITEMS-->
     <div class="alert alert-danger {{ Cart::count() ?  'hidden' : '' }}">

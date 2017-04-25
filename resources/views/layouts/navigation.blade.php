@@ -22,7 +22,7 @@
                             @if(Auth::user()->isAdmin == 1)
                             <li><a href="/cms"><i class="fa fa-unlock-alt"></i> Manage</a></li>
                             @endif
-                        <li><a href=""><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->first_name }}</a></li>
+                        <li><a href="/user/{{ Auth::user()->id }}"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->first_name }}</a></li>
                         <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                         @else
                         <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>

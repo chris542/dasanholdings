@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\User;
 
 class SessionController extends Controller
 {
     public function __construct(){
-     $this->middleware('guest', ['except' => 'destroy']);        
+     $this->middleware('guest', ['except' => [ 'destroy', 'show' ]]);        
+     $this->middleware('auth');
     }
    public function create(){
        return view('session.create');
@@ -22,6 +24,9 @@ class SessionController extends Controller
        }
        //if successful go home
        return redirect()->home();
+   }
+   public function show(User $user){
+       return view('session.show', compact('user'));
    }
     public function destroy(){
         auth()->logout();

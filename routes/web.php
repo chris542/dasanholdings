@@ -6,9 +6,13 @@ Route::GET('/register','RegistrationController@create');
 Route::POST('/register','RegistrationController@store');
 Route::GET('/admusers','RegistrationController@admin');
 Route::GET('/admusers/{user}/remove','RegistrationController@destroy');
+
 //User Session //create = login //store = login succesful //destroy = logout
 Route::GET('/login','SessionController@create');
 Route::POST('/login','SessionController@store');
+Route::GET('/user/{user}','SessionController@show');
+Route::GET('/user/{user}/edit','SessionController@edit');
+Route::POST('/user/{user}','SessionController@update');
 Route::GET('/logout','SessionController@destroy');
 
 //Category Page

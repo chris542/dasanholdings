@@ -65,9 +65,9 @@ $(document).ready(function() {
                     //if table doesn't have an rowID :
                     } else {
                         //console.log('Table is not there. So i make a new line');
-                        //console.log(data.cartDetail.rowId);
+                        console.log(data.product.id);
                         //Append a table row
-                        $('.table tbody').append('<tr> <form class="form-horizontal updateCart"> <input type="hidden" name="_token" value="' + $('meta[name="csrf-token"]').attr('content') + '"> <td class="col-xs-1">'+data.product.name+'</td> <td class="col-xs-1"> <img style="max-width: 30px" class="img-responsive" src="http://dasan.dev/storage/products/'+ data.product.img +'" alt=""></td> <td class="col-xs-1"> <div class="form-group"> <input type="hidden" name="rowID" value="' + data.cartDetail.rowId +'" required> <input class="form-control" type="number" name="qt" min="' + data.product.minimum + '" value="' + data.cartDetail.qty + '" required> </div> </td> <td class="col-xs-1 price">$' + data.cartDetail.price + '</td> <td class="col-xs-1 update"> <button type="submit" class="btn btn-default">Update</button> </td> <td class="col-xs-1 remove"> <a class="btn btn-default btn-danger" href="/removeCart/' + data.cartDetail.rowId +'"><i class="fa fa-times"></i></a> </td> </form> </tr>')
+                        $('.table tbody').append('<tr> <form id="product-'+ data.product.id + '" class="form-horizontal updateCart"> <input form="product-'+ data.product.id + '" type="hidden" name="_token" value="' + $('meta[name="csrf-token"]').attr('content') + '"> <td class="col-xs-1">'+data.product.name+'</td> <td class="col-xs-1"> <img style="max-width: 30px" class="img-responsive" src="http://dasan.dev/storage/products/'+ data.product.img +'" alt=""></td> <td class="col-xs-1"> <div class="form-group"> <input form="product-'+ data.product.id + '" type="hidden" name="rowID" value="' + data.cartDetail.rowId +'" required> <input form="product-'+ data.product.id + '" class="form-control" type="number" name="qt" min="' + data.product.minimum + '" value="' + data.cartDetail.qty + '" required> </div> </td> <td class="col-xs-1 price">$' + data.cartDetail.price + '</td> <td class="col-xs-1 update"> <button form="product-'+ data.product.id + '" type="submit" class="btn btn-default">Update</button> </td> <td class="col-xs-1 remove"> <a class="btn btn-default btn-danger" href="/removeCart/' + data.cartDetail.rowId +'"><i class="fa fa-times"></i></a> </td> </form> </tr>')
                     }
                 },
                 error: function(data){
@@ -79,9 +79,9 @@ $(document).ready(function() {
             return false;
         });
 
-    $('.updateCart').on('submit',function(e){
+    $('body').on('submit','.updateCart', function(e){
         e.stopImmediatePropagation();
-        var formData = $(this).serialize();
+        var formData = $(e.target).serialize();
         $.ajax({
             method:'POST',
             url: "/updateQuantity",
