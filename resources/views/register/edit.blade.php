@@ -28,19 +28,19 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="address">Address : </label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="text" name="address" placeholder="{{ $user->address }}" value="{{ $user->address }}" required>
+                    <input class="form-control" type="text" minlength=5 name="address" placeholder="{{ $user->address }}" value="{{ $user->address }}" required>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="phone">Phone : </label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="text" name="phone" placeholder="{{$user->phone}}" value="{{$user->phone}}" required>
+                    <input class="form-control" type="tel" pattern=".{7,}" title="minimum 7 numbers" name="phone" placeholder="{{$user->phone}}" value="{{$user->phone}}" required>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="mobile">Mobile : </label>
                 <div class="col-sm-10">
-                    <input class="form-control" type="text" name="mobile" placeholder="{{$user->mobile}}" value="{{$user->mobile}}" required>
+                    <input class="form-control" type="tel" pattern=".{7,}" title="minimum 7 numbers" name="mobile" placeholder="{{$user->mobile}}" value="{{$user->mobile}}" required>
                 </div>
             </div>
             <div class="form-group">

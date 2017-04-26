@@ -41,13 +41,13 @@ Registration
             <div class="form-group">
                 <label for="address" class="col-sm-2 control-label">Address:</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" id="address" name="address" cols="30" rows="5" required></textarea>
+                    <textarea class="form-control" id="address" name="address" cols="30" rows="5" minlength=5 required></textarea>
                 </div>
             </div>
             <div class="form-group">
                 <label for="mobile" class="col-sm-2 control-label">Mobile:</label>
                 <div class="col-sm-4">
-                  <input type="tel" pattern=".{7,}" title="minimum 7numbers" class="form-control" id="mobile" name="mobile" required>
+                  <input type="tel" pattern=".{7,}" title="minimum 7 numbers" class="form-control" id="mobile" name="mobile" required>
                 </div>
                 <label for="phone" class="col-sm-2 control-label">Phone:</label>
                 <div class="col-sm-4">

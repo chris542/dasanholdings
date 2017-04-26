@@ -10,9 +10,8 @@ use App\User;
 class RegistrationController extends Controller
 {
     public function __construct(){
-        $this->middleware('admin', ['only'=>'admin', 'destroy']);
-        $this->middleware('auth', [ 'except'=>'create' ]);
-        $this->middleware('guest', [ 'only'=>'create' ]);
+        $this->middleware('admin', ['only'=>[ 'admin', 'destroy' ]]);
+        $this->middleware('guest', [ 'only'=> [ 'create', 'store' ]]);
     }
 
     public function admin(){

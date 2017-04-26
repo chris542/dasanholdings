@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\User;
 
 class SessionController extends Controller
 {
     public function __construct(){
-     $this->middleware('guest', ['except' => 'destroy']);
-     $this->middleware('auth', ['only' => [ 'edit' , 'update' ]]);
+     $this->middleware('auth')->only(['edit','update','destroy']);
     }
    public function create(){
        return view('session.create');
