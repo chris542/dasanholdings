@@ -23,10 +23,9 @@
     }
 }
 
-#userEdit {
+#userEdit , #passwordReset {
     .buttons {
         button, a{
-            width: 80px;
             @include breakpoint(xs) {
                 width: 100%;
                 margin-bottom:1em;

@@ -13,6 +13,7 @@
         <hr>
         <form method="post" action="/user/{{ $user->id }}" class="form-horizontal">
             {{ csrf_field() }}
+            {{ method_field('PATCH') }}
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="first_name">First Name : </label>
                 <div class="col-sm-10">

@@ -2,19 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Category;
 use App\User;
+use App\Category;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
+//LOG IN
 class SessionController extends Controller
 {
     public function __construct(){
-     $this->middleware('auth')->only(['edit','update','destroy']);
+    $this->middleware('auth')->only([ 'edit', 'update' ]);
+     $this->middleware('guest')->only(['create', 'store']);
     }
    public function create(){
+       //Login Page
        return view('session.create');
    } 
    public function store(){
+       //Login Process
        //Authenticate if validation is wrong
        if(! auth()->attempt(request(['email','password']))){
            return back()->withErrors([
@@ -25,10 +30,33 @@ class SessionController extends Controller
        return redirect()->home();
    }
    public function edit(User $user){
-       return view('register.editPassword', compact('user'));
+       //Editing Password
+       if($user->id === auth()->user()->id){
+           return view('session.edit', compact('user'));
+       }
+       return back();
    }
-   public function update(){
-       
+   public function update(User $user){
+       //Editing Password process
+       if(Hash::check(request('password'), $user->password)){
+           //If Old Password is confirmed is matched
+            $this->validate(request(), [
+                'newPassword'=> 'required|confirmed',
+            ]);
+
+           $user->update([
+               'password' =>bcrypt(request('newPassword'))
+           ]);
+
+            return redirect()->route('userDetail', ['user'=>auth()->user()->id]);
+
+
+       } else {
+           //if Old password is not matched
+           return back()->withErrors([
+               'message'=>'Your old password does not match! Please try again'
+           ]);
+       }
    }
     public function destroy(){
         auth()->logout();

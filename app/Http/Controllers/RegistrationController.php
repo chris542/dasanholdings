@@ -11,19 +11,23 @@ class RegistrationController extends Controller
 {
     public function __construct(){
         $this->middleware('admin', ['only'=>[ 'admin', 'destroy' ]]);
-        $this->middleware('guest', [ 'only'=> [ 'create', 'store' ]]);
+        $this->middleware('auth', ['only'=>[ 'edit', 'update' ]]);
+        $this->middleware('guest', [ 'only'=> ['create', 'store']]);
     }
 
     public function admin(){
+        //Admin Page
         $users = User::all();
        return view('admin.user.admin', compact('users')); 
     }
     
     public function create(){
+        //Registering Page
        return view('register.create');
     }
 
     public function store(){
+        //Register Process
         //Validation
         $this->validate(request(), [
             'first_name' => 'required|min:2',
@@ -54,12 +58,21 @@ class RegistrationController extends Controller
         return redirect()->home();
     }
     public function show(User $user){
-       return view('register.show', compact('user'));
+        //Personal Page
+        if($user->id === auth()->user()->id){
+           return view('register.show', compact('user'));
+        }
+        return back();
     }
     public function edit(User $user){
-       return view('register.edit', compact('user'));
+        //Editing Personal Details
+        if($user->id === auth()->user()->id){
+           return view('register.edit', compact('user'));
+        }
+        return back();
     }
     public function update(User $user){
+        //Updating Process
         //Validation
         $this->validate(request(), [
             'first_name' => 'required|min:2',
@@ -78,7 +91,7 @@ class RegistrationController extends Controller
             'isSubscribed' =>request('isSubscribed'),
         ]);
         
-        return redirect()->route('userDetail', ['user'=>$user->id]);
+        return redirect()->route('userDetail', ['user'=>auth()->user()->id]);
     }
     public function destroy(User $user){
        $user->delete(); 
