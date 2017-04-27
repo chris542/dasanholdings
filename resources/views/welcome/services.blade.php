@@ -1,6 +1,6 @@
 <div id="services" class="jumbotron">
-    <div class="container">
     <h2>Services</h2>
+    <div class="container">
         <div class="row">
             <div class="service col-md-4 col-xs-12">
                 <div class="col-sm-6 col-md-12">

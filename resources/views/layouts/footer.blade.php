@@ -32,7 +32,7 @@
                 <h4>My Account</h4>
                 @if(Auth::check())
                     @if(Auth::user()->isAdmin == 1)
-                    <li><a href="/cms"><i class="fa fa-unlock-alt"></i> Manage</a></li>
+                    <li><a href="/cms">Manage</a></li>
                     @endif
                     <li><a href="">{{ Auth::user()->first_name }}</a></li>
                     <li><a href="/logout">Logout</a></li>
