@@ -42,6 +42,7 @@ class Product extends Model
     public function updateRating($newRate){
         $allRatings = $this->comment->pluck('rating');
 
+        $sum = 0;
         if(count($allRatings) == 0 ) {
             $averageRating = $newRate / 1 ;
         } else {
