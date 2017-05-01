@@ -19,6 +19,7 @@
                 @foreach($category->product as $product)
                 <div class="col-md-3 col-sm-4">
                         <div class="thumbnail">
+                            @if(Auth::check())
                                 <div class="addtocart">
                                     <form class="simpleAddToCart">
                                         {{csrf_field()}}
@@ -28,6 +29,7 @@
                                               </button>
                                     </form>
                                 </div>
+                                @endif
                                 <div class="img-holder">
                                     <img class="img-responsive center-block" src="{{ asset('storage/products') }}/{{ $product->img }}" alt="">
                                 </div>

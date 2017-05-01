@@ -66,10 +66,13 @@ My Cart
            <div class="total">
                Total : ${{ ( Cart::total()) }} 
            </div>
-            <div class="form-group cart_controllers">
-              <a href="/destroyCart" class="btn btn-default btn-danger">Empty Cart</a>
-              <button type="submit" class="btn btn-default btn-primary">Purchase</button>
-            </div>
+            <form method="post" action="/purchase" class="form-horizontal">
+                <div class="form-group cart_controllers">
+                  <a href="/destroyCart" class="btn btn-default btn-danger">Empty Cart</a>
+                    {{ csrf_field() }}
+                      <button type="submit" class="btn btn-default btn-primary">Purchase</button>
+                </div>
+            </form>
         </div>
     </div>
     <!--End of Total-->

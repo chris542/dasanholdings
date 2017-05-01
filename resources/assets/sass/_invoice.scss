@@ -1,0 +1,19 @@
+#invoice {
+    .title{
+        text-align: center;
+    }
+    .summary {
+        text-align: right;
+        margin-bottom: 2em;
+        .subtotal,.tax,.total {
+            font-weight:500;
+        }
+        .total {
+            font-size: 1.5em;
+        }
+    }
+    .direction > p {
+        text-align: center;
+        font-style: italic;
+    }
+}

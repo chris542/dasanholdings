@@ -1,5 +1,9 @@
 <?php
 Route::GET('/','HomeController@index')->name('home');
+//WORKING ON THIS NOW!!!! Visit dasan.dev/test/1
+Route::GET('/test/{user}', function(\App\User $user){
+    return view("redirects.purchaseComplete",compact('user'));
+});
 
 //Register //index = details //create = register //store = register complete
 Route::GET('/register','RegistrationController@create');
@@ -33,6 +37,9 @@ Route::POST('/addtocart','CartController@store')->name('addCart');
 Route::POST('/updateQuantity','CartController@update');
 Route::GET('/removeCart/{rowID}','CartController@destroy');
 Route::GET('/destroyCart','CartController@empty');
+
+//PurchaseController
+Route::POST('/purchase','PurchaseController@store');
 
 //Admin Pages
 Route::GET('/cms','AdminController@index');

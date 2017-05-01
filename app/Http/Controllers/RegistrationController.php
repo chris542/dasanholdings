@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Category;
-use App\Banner;
 use App\User;
+use App\Banner;
+use App\Category;
+use Illuminate\Http\Request;
+use App\Mail\registrationComplete;
 
 class RegistrationController extends Controller
 {
@@ -54,8 +55,11 @@ class RegistrationController extends Controller
         //Signin
         auth()->login($user);
 
+        //Send a registration Complete email
+        //\Mail::to($user)->send(new registrationComplete($user));
+
         //Go back home
-        return redirect()->home();
+        return view('redirects.registerComplete',compact('user'));
     }
     public function show(User $user){
         //Personal Page
