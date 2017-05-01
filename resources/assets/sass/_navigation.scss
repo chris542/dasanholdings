@@ -111,6 +111,13 @@
             }
             li {
                 width: 100%;
+                transition: 0.3s all ease-in-out;
+                &:hover {
+                    background-color: $mainColour;
+                    a {
+                        color:$white;
+                    }
+                }
             }
         }
     }
