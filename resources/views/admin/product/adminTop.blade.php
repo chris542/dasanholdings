@@ -6,6 +6,7 @@ Admin Top Products
 @section('content')
 <div id="admTop" class="container-fluid">
     <h1>Admin Top Products</h1>
+    <p>It is recommended to have at least 6 items in top products.</p>
     <hr>
     <table class="table-condensed table table-responsive">
         <thead>
