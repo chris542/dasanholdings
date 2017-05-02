@@ -8,7 +8,7 @@
 <div id="showProducts" class="container">
     <div class="row">
         @include('layouts.sideCategoryNav')
-        <div class="col-md-10 products-page">
+        <div class="col-md-9 products-page">
            <ol class="breadcrumb">
                <li><a href="/">Home</a></li>
                <li class="active"><a href="/category/{{ $category->id }}">{{ $category->name }}</a></li>

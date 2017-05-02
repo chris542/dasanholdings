@@ -10,7 +10,7 @@
         <!--Category Nav-->
         @include('layouts.sideCategoryNav')
         <!--Category Nav End-->
-        <div class="col-md-10 products-page">
+        <div class="col-md-9 products-page">
             <div class="row">
                 <div class="col-md-12">
                     <ol class="breadcrumb">
