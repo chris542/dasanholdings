@@ -1,9 +1,11 @@
 <?php
 Route::GET('/','HomeController@index')->name('home');
-//WORKING ON THIS NOW!!!! Visit dasan.dev/test/1
-Route::GET('/test/{user}', function(\App\User $user){
+/*Route::GET('/test/{user}', function(\App\User $user){
     return view("redirects.purchaseComplete",compact('user'));
-});
+});*/
+Route::GET('/delivery','HomeController@delivery');
+Route::GET('/privacyandpolicy','HomeController@privacyandpolicy');
+Route::GET('/termsofservice','HomeController@termsofservice');
 
 //Register //index = details //create = register //store = register complete
 Route::GET('/register','RegistrationController@create');

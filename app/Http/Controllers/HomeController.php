@@ -15,4 +15,13 @@ class HomeController extends Controller
        $topProducts = Product::topProduct();
        return view('welcome', compact('banners','topProducts')); 
    } 
+   public function delivery(){
+        return view('delivery');
+   }
+   public function privacyandpolicy(){
+      return view('privacyandpolicy');
+   }
+   public function termsofservice(){
+      return view('termsofservice'); 
+   }
 }

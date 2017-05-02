@@ -1,0 +1,19 @@
+#informationPage {
+    p {
+        margin-bottom : 2em;
+    }
+    img {
+        margin : 3em 0;
+    }
+    .termsConditions {
+       > li {
+            margin-bottom: 2em;
+            ul, ol {
+                margin: 1em 0 ;
+                ul, ol {
+                    margin: 0.5em 0;
+                }
+            }
+        }
+    }
+}

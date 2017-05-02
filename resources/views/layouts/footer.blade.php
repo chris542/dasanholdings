@@ -24,9 +24,9 @@
             </ul>
             <ul class="col-md-3">
                 <h4>Policies</h4>
-                <li><a href="">Delivery Returns</a></li>
-                <li><a href="">Privacy and Policy</a></li>
-                <li><a href="">Terms of Service</a></li>
+                <li><a href="/delivery">Delivery Returns</a></li>
+                <li><a href="/privacyandpolicy">Privacy and Policy</a></li>
+                <li><a href="/termsofservice">Terms of Service</a></li>
             </ul>
             <ul class="col-md-3">
                 <h4>My Account</h4>
