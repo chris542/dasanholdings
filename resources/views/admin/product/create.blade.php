@@ -12,7 +12,7 @@ Create Product
         <div class="form-group">
             <label class="col-sm-2 control-label" for="name">Name : </label>
             <div class="col-sm-10">
-                <input class="form-control" type="text" name="name" required>
+                <input class="form-control" type="text" name="name" required autofocus>
             </div>
         </div>
         <div class="form-group">

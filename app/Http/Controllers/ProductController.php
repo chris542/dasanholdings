@@ -17,18 +17,18 @@ class ProductController extends Controller
        return view('product.show',compact('product', 'category', 'comments')); 
     }
    public function admin(){
-      $products = Product::orderBy('category_id')->orderBy('order')->get(); 
+      $products = Product::orderBy('category_id')->orderBy('products.order')->get(); 
       return view('admin.product.admin',compact('products'));
    } 
 
    public function create(){
-       $categories = Category::all();
+       $categories = Category::orderBy('order')->get();
        return view('admin.product.create', compact('categories'));
    }
    public function store(){
        //Validate
        $this->validate(request(),[
-           'name' => 'required|max:30',
+           'name' => 'required|max:50',
            'category_id' => 'required',
            'description' => 'required',
            'price'=> 'required|min:1',
@@ -64,7 +64,7 @@ class ProductController extends Controller
    public function update(Product $product){
        //Validate
        $this->validate(request(),[
-           'name' => 'required|max:30',
+           'name' => 'required|max:50',
            'category_id' => 'required',
            'description' => 'required',
            'price'=> 'required|min:1',

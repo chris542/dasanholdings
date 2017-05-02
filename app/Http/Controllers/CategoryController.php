@@ -16,7 +16,7 @@ class CategoryController extends Controller
     }
     
     public function admin(){
-        $categories = Category::all();
+        $categories = Category::orderBy('order')->get();
         return view('admin.category.admin', compact('categories'));
     }
 

@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         view()->composer(['layouts.footer', 'admin.layouts.navigation', 'layouts.navigation' ,'layouts.sideCategoryNav' ], function ($view) {
-            $view->with('navCat', \App\Category::all());
+            $view->with('navCat', \App\Category::orderBy('order')->get());
         });
     }
 
