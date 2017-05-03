@@ -100,6 +100,7 @@
     .navbar-collapse{
         text-align: center;
         border: none;
+        padding:0;
         .navbar-nav {
             display:flex;
             justify-content: space-between;
@@ -110,8 +111,12 @@
                 vertical-align: top;
             }
             li {
+                font-size: 0.8em;
                 width: 100%;
                 transition: 0.3s all ease-in-out;
+                display:flex;
+                flex-flow:column nowrap;
+                justify-content:center;
                 &:hover {
                     background-color: $mainColour;
                     a {
