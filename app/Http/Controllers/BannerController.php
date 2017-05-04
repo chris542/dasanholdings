@@ -25,8 +25,8 @@ class BannerController extends Controller
     public function store(){
         //Validates the form
         $this->validate(request(),[
-            'title'=>'required|max:30',
-            'description' => 'required|max:50',
+            'title'=>'required|max:50',
+            'description' => 'required',
             'bgImg' => 'required|mimes:jpeg,png,jpg',
         ]);
 
@@ -51,8 +51,8 @@ class BannerController extends Controller
     public function update(Banner $banner){
         //Validate
         $this->validate(request(),[
-            'title'=>'required|max:30',
-            'description' => 'required|max:50',
+            'title'=>'required|max:50',
+            'description' => 'required',
             'bgImg' => 'mimes:jpeg,png,jpg',
         ]);
        

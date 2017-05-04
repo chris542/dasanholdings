@@ -13,7 +13,7 @@ Banner {{ $banner->title }} Edit
        <div class="form-group">
            <label class="col-sm-2 control-label" for="title">Title</label>
            <div class="col-sm-10">
-               <input class="form-control" type="text" name="title" placeholder="{{ $banner->title }}" value="{{ $banner->title }}">
+               <input class="form-control" type="text" maxlength=50 name="title" placeholder="{{ $banner->title }}" value="{{ $banner->title }}">
            </div>
        </div> 
         <div class="form-group">

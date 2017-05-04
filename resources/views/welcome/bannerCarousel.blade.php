@@ -19,6 +19,7 @@
             <div class="item">
             @endif
                 <img src="{{  asset('storage/banners/') }}/{{ $banner->bgImg }}" alt="{{ $banner->bgImg }}" class="slide-image">
+                <div class="bs-slider-overlay"></div>
                 <div class="container">
                     <div class="row">
                         <div class="slide-text slide_style_left">
