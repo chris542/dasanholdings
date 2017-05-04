@@ -8,15 +8,15 @@
 //boostrap mixin
 @mixin breakpoint($point){
   @if ($point == lg){
-    @media (min-width: 1200px){ @content }
+    @media (min-width: 1024px){ @content }
   }
   @else if ($point == md){
-    @media (min-width: 992px) and (max-width: 1199px){ @content }
+    @media (min-width: 768px) and (max-width: 1023px){ @content }
   }
   @else if ($point == sm){
-    @media (min-width: 768px) and (max-width: 991px){ @content }
+    @media (min-width: 425px) and (max-width: 767px){ @content }
   }
   @else if ($point == xs){
-    @media (max-width: 767px) and (min-width: 400px){ @content }
+    @media (min-width: 320px) and (max-width: 424px){ @content }
   }
 }

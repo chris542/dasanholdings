@@ -108,8 +108,15 @@
             display:flex;
             justify-content: space-between;
             float:none;
+            @include breakpoint(sm) {
+                display:block;
+                margin:0;
+                float: none;
+                vertical-align: top;
+            }
             @include breakpoint(xs) {
                 display:block;
+                margin:0;
                 float: none;
                 vertical-align: top;
             }
