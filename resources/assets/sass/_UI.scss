@@ -24,6 +24,16 @@ a {
 }
 
 //login-form
+.btn {
+    transition: ease-in-out 0.3s all;
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);        
+    }
+    &:active {
+        transform: translateY(0);
+    }
+}
 .btn-default {
     border-radius: 0;
 }
@@ -32,8 +42,8 @@ a {
     border-color: $mainColour;
     color:$white;
     &:hover {
-        @include darkBGC($mainColour);
-        @include darkBDC($mainColour);
+        background-color: $mainColour;
+        border-color: $mainColour;
         color:$white;
     }
 }
@@ -42,8 +52,9 @@ a {
     border-color: $subColour;
     color: $white;
     &:hover {
-        @include darkBGC($subColour);
-        @include darkBDC($subColour);
+        background-color: $subColour;
+        border-color: $subColour;
+        color: $white;
     }
 }
 .form-control {

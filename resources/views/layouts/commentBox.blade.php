@@ -1,6 +1,8 @@
 <div class="commentBox row">
     <div class="col-md-12">
         <!--COMMENT SECTION-->
+    @if(count($comments))
+        <h2>Reviews : </h2>
         <ul class="list-group">
             @foreach($comments as $comment)
             <li class="list-group-item comments">
@@ -31,8 +33,10 @@
             @endforeach
         </ul>
         <!--END COMMENT SECTION-->
+        @endif
         <!--CREATE COMMENT SECTION-->
         @if(Auth::check())
+            <h3>Your Review : </h3>
             <form method="post" action="/product/{{ $product->id }}/comment">
                 {{ csrf_field() }}
                     <input class="form-control" type="hidden" name="product_id" value="{{ $product->id }}">

@@ -36,7 +36,7 @@
                             <i class="fa fa-star-o"></i>
                         @endfor
                     </div>
-                   <p> {!! nl2br(e($product->description)) !!}</p>
+                   <p class="description"> {!! nl2br(e($product->description)) !!}</p>
                     @if(Auth::check())
                         <form class="simpleAddToCart">
                         {{ csrf_field() }}

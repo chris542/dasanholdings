@@ -29,6 +29,9 @@
             color: $white;
         }
     }
+    .navbar-collapse {
+        border-color: $mainColour;
+    }
 }
 /* SEARCHNAV */
 .search-nav{
