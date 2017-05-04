@@ -83,6 +83,15 @@
     border: none;
     margin: 0;
     background-color: $white;
+    @include breakpoint(sm) {
+        min-height:0;
+    }
+    @include breakpoint(xs) {
+        min-height:0;
+    }
+    .navbar-toggle{
+        height:100%;
+    }
     .navbar-header{
         margin: none;
         button.navbar-toggle{
@@ -139,7 +148,8 @@
 }
 .affix {
     width:100%;
-    margin-top:50px;
+    top:50px;
+    left:0;
     z-index:1000;
     border-radius:0;
 }
